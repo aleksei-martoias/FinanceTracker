@@ -16,10 +16,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
+//        supportActionBar?.apply {
+//            setDisplayHomeAsUpEnabled(true)
 //            setHomeAsUpIndicator(R.drawable.ic_menu)
-        }
+//        }
 
 //        fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

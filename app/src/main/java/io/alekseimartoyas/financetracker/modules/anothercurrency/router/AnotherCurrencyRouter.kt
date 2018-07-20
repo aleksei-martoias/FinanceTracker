@@ -1,4 +1,4 @@
 package io.alekseimartoyas.financetracker.modules.anothercurrency.router
 
-class AnotherCurrencyRouter {
+class AnotherCurrencyRouter: AnotherCurrencyRouterInput {
 }
