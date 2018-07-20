@@ -1,10 +1,10 @@
-package io.alekseimartoyas.financetracker.modules.main_screen.presenter
+package io.alekseimartoyas.financetracker.modules.mainscreen.presenter
 
-import io.alekseimartoyas.financetracker.modules.main_screen.interactor.MainScreenInteractorInput
-import io.alekseimartoyas.financetracker.modules.main_screen.interactor.MainScreenInteractorOutput
-import io.alekseimartoyas.financetracker.modules.main_screen.router.MainScreenRouterInput
-import io.alekseimartoyas.financetracker.modules.main_screen.view.MainScreenFragmentInput
-import io.alekseimartoyas.financetracker.modules.main_screen.view.MainScreenFragmentOutput
+import io.alekseimartoyas.financetracker.modules.mainscreen.interactor.MainScreenInteractorInput
+import io.alekseimartoyas.financetracker.modules.mainscreen.interactor.MainScreenInteractorOutput
+import io.alekseimartoyas.financetracker.modules.mainscreen.router.MainScreenRouterInput
+import io.alekseimartoyas.financetracker.modules.mainscreen.view.MainScreenFragmentInput
+import io.alekseimartoyas.financetracker.modules.mainscreen.view.MainScreenFragmentOutput
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
 class MainScreenPresenter: BasePresenter<MainScreenFragmentInput,

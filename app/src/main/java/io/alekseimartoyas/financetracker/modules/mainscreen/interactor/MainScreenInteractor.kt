@@ -1,6 +1,5 @@
-package io.alekseimartoyas.financetracker.modules.main_screen.interactor
+package io.alekseimartoyas.financetracker.modules.mainscreen.interactor
 
-import io.alekseimartoyas.financetracker.modules.main_screen.presenter.MainScreenPresenterInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseInteractor
 
 class MainScreenInteractor: BaseInteractor<MainScreenInteractorOutput>(),
