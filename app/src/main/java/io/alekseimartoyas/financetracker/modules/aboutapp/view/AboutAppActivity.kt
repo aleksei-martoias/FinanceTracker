@@ -13,5 +13,6 @@ class AboutAppActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_about_app)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title = resources.getString(R.string.nav_about_app)
     }
 }

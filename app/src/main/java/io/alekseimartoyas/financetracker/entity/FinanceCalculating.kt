@@ -4,9 +4,9 @@ import io.alekseimartoyas.financetracker.datalayer.Currency
 import io.alekseimartoyas.financetracker.datalayer.OperationType
 import io.alekseimartoyas.financetracker.datalayer.Transaction
 
-class FinanceCalculating(val transactions: Array<Transaction>) {
+class FinanceCalculating(val transactions: Array<Transaction>): FinanceCalculatingInput {
 
-    fun calculateTransactionsSum(inCurrency: Currency): Float {
+    override fun calculateTransactionsSum(inCurrency: Currency): Float {
         var balance: Float = 0F
 
         for (item in transactions)

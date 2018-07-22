@@ -16,6 +16,7 @@ class SettingsActivity : BaseActivity<SettingsOutput>(),
         setSupportActionBar(toolbar_settings)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title = resources.getString(R.string.nav_settings)
 
         SettingsConfigurator().buildModule(this)
     }

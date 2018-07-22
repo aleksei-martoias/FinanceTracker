@@ -1,5 +1,6 @@
 package io.alekseimartoyas.financetracker.modules.mainscreen.configurator
 
+import io.alekseimartoyas.financetracker.App.Companion.graph
 import io.alekseimartoyas.financetracker.modules.mainscreen.interactor.MainScreenInteractor
 import io.alekseimartoyas.financetracker.modules.mainscreen.presenter.MainScreenPresenter
 import io.alekseimartoyas.financetracker.modules.mainscreen.router.MainScreenRouter
@@ -19,5 +20,6 @@ class MainScreenConfigurator {
         presenter.router = router
 
         interactor.presenter = presenter
+        interactor.financeCalculating = graph.getFinanceCalculating()
     }
 }
