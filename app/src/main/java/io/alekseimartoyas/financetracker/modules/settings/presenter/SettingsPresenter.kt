@@ -1,5 +1,6 @@
 package io.alekseimartoyas.financetracker.modules.settings.presenter
 
+import android.content.Context
 import io.alekseimartoyas.financetracker.modules.settings.interactor.SettingsInteractorInput
 import io.alekseimartoyas.financetracker.modules.settings.interactor.SettingsInteractorOutput
 import io.alekseimartoyas.financetracker.modules.settings.router.SettingsRouterInput
@@ -12,9 +13,24 @@ class SettingsPresenter: BasePresenter<SettingsInput,
         SettingsRouterInput>(),
         SettingsOutput,
         SettingsInteractorOutput {
+
     override var interactor: SettingsInteractorInput? = null
     override var activity: SettingsInput? = null
     override var router: SettingsRouterInput? = null
+    var canStartActivity = false
+
+    override fun blockStartActivity() {
+        canStartActivity = false
+    }
+
+    override fun unblockStartActivity() {
+        canStartActivity = true
+    }
+
+    override fun showAboutApp(context: Context) {
+        if (canStartActivity)
+            router?.showAboutApp(context)
+    }
 
     override fun destructor() {
         activity = null

@@ -57,9 +57,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
             }
-            R.id.nav_about_app -> {
-                startActivity(Intent(this, AboutAppActivity::class.java))
-            }
+//            R.id.nav_about_app -> {
+//                startActivity(Intent(this, AboutAppActivity::class.java))
+//            }
         }
 
 //        item.isChecked = true

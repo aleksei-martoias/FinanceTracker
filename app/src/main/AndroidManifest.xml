@@ -24,7 +24,7 @@
             android:name=".modules.settings.view.SettingsActivity"
             android:parentActivityName=".modules.navigationdrawer.MainActivity" />
         <activity android:name=".modules.aboutapp.view.AboutAppActivity"
-            android:parentActivityName=".modules.navigationdrawer.MainActivity" />
+            android:parentActivityName=".modules.settings.view.SettingsActivity" />
     </application>
 
 </manifest>
