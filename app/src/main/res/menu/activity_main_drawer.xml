@@ -10,7 +10,7 @@
             android:title="@string/nav_main" />
     </group>
 
-    <item android:title="sdfkj">
+    <item android:title="@string/other">
         <menu>
             <item
                 android:id="@+id/nav_settings"
