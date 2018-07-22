@@ -8,7 +8,7 @@ class MainScreenInteractor: BaseInteractor<MainScreenInteractorOutput>(),
     override var presenter: MainScreenInteractorOutput? = null
 
     override fun destructor() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
 }

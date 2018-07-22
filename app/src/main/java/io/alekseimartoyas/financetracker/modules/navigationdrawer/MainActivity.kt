@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_main -> {
-
+                
             }
             R.id.nav_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))

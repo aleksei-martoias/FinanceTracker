@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.modules.anothercurrency.view.AnotherCurrencyFragment
+import io.alekseimartoyas.financetracker.modules.mainscreen.configurator.MainScreenConfigurator
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 
 class MainScreenFragment: BaseFragment<MainScreenFragmentOutput>(),
@@ -29,7 +30,19 @@ class MainScreenFragment: BaseFragment<MainScreenFragmentOutput>(),
         return rootView
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        MainScreenConfigurator().buildModule(this)
+    }
+
     override fun destructor() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        presenter?.destructor()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        destructor()
     }
 }

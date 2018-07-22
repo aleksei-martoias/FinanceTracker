@@ -7,6 +7,6 @@ class SettingsInteractor: BaseInteractor<SettingsInteractorOutput>(),
     override var presenter: SettingsInteractorOutput? = null
 
     override fun destructor() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 }

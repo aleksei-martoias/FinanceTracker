@@ -18,6 +18,7 @@ class AnotherCurrencyPresenter: BasePresenter<AnotherCurrencyFragmentInput,
     override var router: AnotherCurrencyRouterInput? = null
 
     override fun destructor() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        activity = null
+        interactor?.destructor()
     }
 }

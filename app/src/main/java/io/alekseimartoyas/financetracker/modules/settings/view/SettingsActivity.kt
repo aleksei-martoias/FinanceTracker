@@ -2,6 +2,7 @@ package io.alekseimartoyas.financetracker.modules.settings.view
 
 import android.os.Bundle
 import io.alekseimartoyas.financetracker.R
+import io.alekseimartoyas.financetracker.modules.settings.configurator.SettingsConfigurator
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_settings.*
 
@@ -15,9 +16,17 @@ class SettingsActivity : BaseActivity<SettingsOutput>(),
         setSupportActionBar(toolbar_settings)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        SettingsConfigurator().buildModule(this)
     }
 
     override fun destructor() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        presenter?.destructor()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        destructor()
     }
 }

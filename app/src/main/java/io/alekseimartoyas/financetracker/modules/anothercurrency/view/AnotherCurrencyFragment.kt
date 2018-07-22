@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import io.alekseimartoyas.financetracker.R
+import io.alekseimartoyas.financetracker.modules.anothercurrency.configurator.AnotherCurrencyConfigurator
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 import kotlinx.android.synthetic.main.fragment_another_currency.*
 
@@ -18,7 +19,19 @@ class AnotherCurrencyFragment: BaseFragment<AnotherCurrencyFragmentOutput>(),
         return inflater.inflate(R.layout.fragment_another_currency, container, false)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        AnotherCurrencyConfigurator().buildModule(this)
+    }
+
     override fun destructor() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        presenter?.destructor()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        destructor()
     }
 }
