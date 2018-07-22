@@ -19,7 +19,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
-            multiDexEnabled true
+            multiDexEnabled false
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

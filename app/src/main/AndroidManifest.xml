@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".modules.navigationdrawer.MainActivity"
+            android:name=".modules.navigationdrawer.view.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".modules.settings.view.SettingsActivity"
-            android:parentActivityName=".modules.navigationdrawer.MainActivity" />
+            android:parentActivityName=".modules.navigationdrawer.view.MainActivity" />
         <activity android:name=".modules.aboutapp.view.AboutAppActivity"
             android:parentActivityName=".modules.settings.view.SettingsActivity" />
     </application>
