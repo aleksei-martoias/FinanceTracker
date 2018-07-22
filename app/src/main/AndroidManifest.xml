@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".modules.settings.view.Settings"></activity>
+        <activity
+            android:name=".modules.settings.view.SettingsActivity"
+            android:parentActivityName=".modules.navigationdrawer.MainActivity" />
     </application>
 
 </manifest>
