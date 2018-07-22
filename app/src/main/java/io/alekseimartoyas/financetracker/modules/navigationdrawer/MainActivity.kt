@@ -2,7 +2,9 @@ package io.alekseimartoyas.financetracker.modules.navigationdrawer
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -14,6 +16,9 @@ import io.alekseimartoyas.financetracker.modules.settings.view.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    var currentFragment: Int = R.id.nav_main
+    val keyCurrentFragment = "currentFragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +32,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.main_frame, MainScreenFragment(), "visible_fragment")
-                    .commit()
+        currentFragment = if (savedInstanceState == null) {
+            replaceFragment(MainScreenFragment())
             nav_view.setCheckedItem(R.id.nav_main)
+            R.id.nav_main
+        } else {
+            savedInstanceState?.getInt(keyCurrentFragment)
         }
 
         //        fab.setOnClickListener { view ->
@@ -50,21 +56,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
-        when (item.itemId) {
-            R.id.nav_main -> {
-
+        if (item.itemId != currentFragment)
+            when (item.itemId) {
+                R.id.nav_main -> {
+                    replaceFragment(MainScreenFragment())
+                }
+                R.id.nav_settings -> {
+                    startActivity(Intent(this, SettingsActivity::class.java))
+                }
+//              R.id.nav_about_app -> {
+//                  startActivity(Intent(this, AboutAppActivity::class.java))
+//              }
             }
-            R.id.nav_settings -> {
-                startActivity(Intent(this, SettingsActivity::class.java))
-            }
-//            R.id.nav_about_app -> {
-//                startActivity(Intent(this, AboutAppActivity::class.java))
-//            }
-        }
 
 //        item.isChecked = true
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.main_frame, fragment, "visible_fragment")
+                .commit()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+        super.onSaveInstanceState(outState, outPersistentState)
+
+        outState?.putInt(keyCurrentFragment, currentFragment)
     }
 
     //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
