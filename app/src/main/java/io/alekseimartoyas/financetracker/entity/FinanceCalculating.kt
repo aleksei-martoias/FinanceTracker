@@ -11,9 +11,9 @@ class FinanceCalculating(val transactions: Array<Transaction>) {
 
         for (item in transactions)
             if (item.operationType == OperationType.ENLISTMENT)
-                balance += toTargetCurrency(item, inCurrency, 1F)
+                balance += toTargetCurrency(item, inCurrency, 2F)
             else if (item.operationType == OperationType.DEBIT)
-                balance -= toTargetCurrency(item, inCurrency, 1F)
+                balance -= toTargetCurrency(item, inCurrency, 2F)
 
         return balance
     }
