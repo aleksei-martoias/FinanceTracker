@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
     <string name="nav_main">Main</string>
     <string name="nav_settings">Settings</string>
+    <string name="nav_about_app">About app</string>
     <string name="other">Other</string>
 
     <!--fragment_main_screen-->
@@ -18,4 +19,10 @@
     <string-array name="currency_spinner">
         <item>USD</item>
     </string-array>
+
+
+
+    <!--AboutApp-->
+    <string name="appInfo">Finance tracking application</string>
+    <string name="devBy">Developed by Aleksei Martoyas for Mob Dev School</string>
 </resources>

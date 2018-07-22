@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
+import io.alekseimartoyas.financetracker.modules.aboutapp.view.AboutAppActivity
 import io.alekseimartoyas.financetracker.modules.mainscreen.view.MainScreenFragment
 import io.alekseimartoyas.financetracker.modules.settings.view.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -55,6 +56,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
+            }
+            R.id.nav_about_app -> {
+                startActivity(Intent(this, AboutAppActivity::class.java))
             }
         }
 
