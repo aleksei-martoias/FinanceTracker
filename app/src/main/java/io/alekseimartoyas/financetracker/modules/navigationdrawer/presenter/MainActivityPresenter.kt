@@ -1,21 +1,21 @@
 package io.alekseimartoyas.financetracker.modules.navigationdrawer.presenter
 
 import android.content.Context
-import io.alekseimartoyas.financetracker.modules.navigationdrawer.interactor.MainActivityInteractorInput
-import io.alekseimartoyas.financetracker.modules.navigationdrawer.interactor.MainActivityInteractorOutput
+import io.alekseimartoyas.financetracker.modules.navigationdrawer.interactor.IMainActivityInteractorInput
+import io.alekseimartoyas.financetracker.modules.navigationdrawer.interactor.IMainActivityInteractorPresenter
 import io.alekseimartoyas.financetracker.modules.navigationdrawer.router.MainActivityRouterInput
-import io.alekseimartoyas.financetracker.modules.navigationdrawer.view.MainActivityInput
-import io.alekseimartoyas.financetracker.modules.navigationdrawer.view.MainActivityOutput
+import io.alekseimartoyas.financetracker.modules.navigationdrawer.view.IMainActivityInput
+import io.alekseimartoyas.financetracker.modules.navigationdrawer.view.IMainActivityPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class MainActivityPresenter: BasePresenter<MainActivityInput,
-        MainActivityInteractorInput,
+class MainActivityPresenter: BasePresenter<IMainActivityInput,
+        IMainActivityInteractorInput,
         MainActivityRouterInput>(),
-        MainActivityOutput,
-        MainActivityInteractorOutput {
+        IMainActivityPresenter,
+        IMainActivityInteractorPresenter {
 
-    override var interactor: MainActivityInteractorInput? = null
-    override var view: MainActivityInput? = null
+    override var interactor: IMainActivityInteractorInput? = null
+    override var view: IMainActivityInput? = null
     override var router: MainActivityRouterInput? = null
     var canStartActivity = false
 

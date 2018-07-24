@@ -2,7 +2,7 @@ package io.alekseimartoyas.financetracker.modules.settings.view
 
 import android.content.Context
 
-interface SettingsOutput {
+interface ISettingsPresenter {
     fun destructor()
 
     fun blockStartActivity()

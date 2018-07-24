@@ -7,18 +7,16 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.modules.mainscreen.view.MainScreenFragment
-import io.alekseimartoyas.financetracker.modules.navigationdrawer.configurator.MainActivityConfigurator
 import io.alekseimartoyas.financetracker.modules.settings.view.SettingsActivity
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity<MainActivityOutput>(),
-        MainActivityInput, NavigationView.OnNavigationItemSelectedListener {
-    override var presenter: MainActivityOutput? = null
+class MainActivity : BaseActivity<IMainActivityPresenter>(),
+        IMainActivityInput, NavigationView.OnNavigationItemSelectedListener {
+    override var presenter: IMainActivityPresenter? = null
 
     var currentFragment: Int = R.id.nav_main
     val keyCurrentFragment = "currentFragment"

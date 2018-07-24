@@ -1,21 +1,21 @@
 package io.alekseimartoyas.financetracker.modules.settings.presenter
 
 import android.content.Context
-import io.alekseimartoyas.financetracker.modules.settings.interactor.SettingsInteractorInput
-import io.alekseimartoyas.financetracker.modules.settings.interactor.SettingsInteractorOutput
+import io.alekseimartoyas.financetracker.modules.settings.interactor.ISettingsInteractorInput
+import io.alekseimartoyas.financetracker.modules.settings.interactor.ISettingsInteractorPresenter
 import io.alekseimartoyas.financetracker.modules.settings.router.SettingsRouterInput
-import io.alekseimartoyas.financetracker.modules.settings.view.SettingsInput
-import io.alekseimartoyas.financetracker.modules.settings.view.SettingsOutput
+import io.alekseimartoyas.financetracker.modules.settings.view.ISettingsActivityInput
+import io.alekseimartoyas.financetracker.modules.settings.view.ISettingsPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class SettingsPresenter: BasePresenter<SettingsInput,
-        SettingsInteractorInput,
+class SettingsPresenter: BasePresenter<ISettingsActivityInput,
+        ISettingsInteractorInput,
         SettingsRouterInput>(),
-        SettingsOutput,
-        SettingsInteractorOutput {
+        ISettingsPresenter,
+        ISettingsInteractorPresenter {
 
-    override var interactor: SettingsInteractorInput? = null
-    override var view: SettingsInput? = null
+    override var interactor: ISettingsInteractorInput? = null
+    override var view: ISettingsActivityInput? = null
     override var router: SettingsRouterInput? = null
     var canStartActivity = false
 

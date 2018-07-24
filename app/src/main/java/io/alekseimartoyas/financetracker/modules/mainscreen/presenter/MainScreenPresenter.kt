@@ -1,19 +1,19 @@
 package io.alekseimartoyas.financetracker.modules.mainscreen.presenter
 
-import io.alekseimartoyas.financetracker.modules.mainscreen.interactor.MainScreenInteractorInput
-import io.alekseimartoyas.financetracker.modules.mainscreen.interactor.MainScreenInteractorOutput
+import io.alekseimartoyas.financetracker.modules.mainscreen.interactor.IMainScreenInteractorInput
+import io.alekseimartoyas.financetracker.modules.mainscreen.interactor.IMainScreenInteractorPresenter
 import io.alekseimartoyas.financetracker.modules.mainscreen.router.MainScreenRouterInput
-import io.alekseimartoyas.financetracker.modules.mainscreen.view.MainScreenFragmentInput
-import io.alekseimartoyas.financetracker.modules.mainscreen.view.MainScreenFragmentOutput
+import io.alekseimartoyas.financetracker.modules.mainscreen.view.IMainScreenFragmentInput
+import io.alekseimartoyas.financetracker.modules.mainscreen.view.IMainScreenFragmentPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class MainScreenPresenter: BasePresenter<MainScreenFragmentInput,
-        MainScreenInteractorInput,
+class MainScreenPresenter: BasePresenter<IMainScreenFragmentInput,
+        IMainScreenInteractorInput,
         MainScreenRouterInput>(),
-        MainScreenFragmentOutput, MainScreenInteractorOutput {
+        IMainScreenFragmentPresenter, IMainScreenInteractorPresenter {
 
-    override var interactor: MainScreenInteractorInput? = null
-    override var view: MainScreenFragmentInput? = null
+    override var interactor: IMainScreenInteractorInput? = null
+    override var view: IMainScreenFragmentInput? = null
     override var router: MainScreenRouterInput? = null
 
     override fun destructor() {

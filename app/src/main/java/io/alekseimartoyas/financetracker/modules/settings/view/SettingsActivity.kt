@@ -7,9 +7,9 @@ import io.alekseimartoyas.financetracker.modules.settings.configurator.SettingsC
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_settings.*
 
-class SettingsActivity : BaseActivity<SettingsOutput>(),
-        SettingsInput{
-    override var presenter: SettingsOutput? = null
+class SettingsActivity : BaseActivity<ISettingsPresenter>(),
+        ISettingsActivityInput{
+    override var presenter: ISettingsPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

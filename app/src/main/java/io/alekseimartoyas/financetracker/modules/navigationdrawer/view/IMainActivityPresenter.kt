@@ -2,7 +2,7 @@ package io.alekseimartoyas.financetracker.modules.navigationdrawer.view
 
 import android.content.Context
 
-interface MainActivityOutput {
+interface IMainActivityPresenter {
     fun destructor()
 
     fun blockStartActivity()

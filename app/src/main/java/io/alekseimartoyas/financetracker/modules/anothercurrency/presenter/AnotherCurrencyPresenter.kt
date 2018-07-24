@@ -1,20 +1,20 @@
 package io.alekseimartoyas.financetracker.modules.anothercurrency.presenter
 
-import io.alekseimartoyas.financetracker.modules.anothercurrency.interactor.AnotherCurrencyInteractorInput
-import io.alekseimartoyas.financetracker.modules.anothercurrency.interactor.AnotherCurrencyInteractorOutput
+import io.alekseimartoyas.financetracker.modules.anothercurrency.interactor.IAnotherCurrencyInteractorInput
+import io.alekseimartoyas.financetracker.modules.anothercurrency.interactor.IAnotherCurrencyInteractorPresenter
 import io.alekseimartoyas.financetracker.modules.anothercurrency.router.AnotherCurrencyRouterInput
-import io.alekseimartoyas.financetracker.modules.anothercurrency.view.AnotherCurrencyFragmentInput
-import io.alekseimartoyas.financetracker.modules.anothercurrency.view.AnotherCurrencyFragmentOutput
+import io.alekseimartoyas.financetracker.modules.anothercurrency.view.IAnotherCurrencyFragmentInput
+import io.alekseimartoyas.financetracker.modules.anothercurrency.view.IAnotherCurrencyFragmentPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class AnotherCurrencyPresenter: BasePresenter<AnotherCurrencyFragmentInput,
-        AnotherCurrencyInteractorInput,
+class AnotherCurrencyPresenter: BasePresenter<IAnotherCurrencyFragmentInput,
+        IAnotherCurrencyInteractorInput,
         AnotherCurrencyRouterInput>(),
-        AnotherCurrencyFragmentOutput,
-        AnotherCurrencyInteractorOutput {
+        IAnotherCurrencyFragmentPresenter,
+        IAnotherCurrencyInteractorPresenter {
 
-    override var interactor: AnotherCurrencyInteractorInput? = null
-    override var view: AnotherCurrencyFragmentInput? = null
+    override var interactor: IAnotherCurrencyInteractorInput? = null
+    override var view: IAnotherCurrencyFragmentInput? = null
     override var router: AnotherCurrencyRouterInput? = null
 
     override fun destructor() {

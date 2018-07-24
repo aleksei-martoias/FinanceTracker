@@ -2,10 +2,10 @@ package io.alekseimartoyas.financetracker.modules.anothercurrency.interactor
 
 import io.alekseimartoyas.tradetracker.Foundation.BaseInteractor
 
-class AnotherCurrencyInteractor: BaseInteractor<AnotherCurrencyInteractorOutput>(),
-        AnotherCurrencyInteractorInput {
+class AnotherCurrencyInteractor: BaseInteractor<IAnotherCurrencyInteractorPresenter>(),
+        IAnotherCurrencyInteractorInput {
 
-    override var presenter: AnotherCurrencyInteractorOutput? = null
+    override var presenter: IAnotherCurrencyInteractorPresenter? = null
 
     override fun destructor() {
 

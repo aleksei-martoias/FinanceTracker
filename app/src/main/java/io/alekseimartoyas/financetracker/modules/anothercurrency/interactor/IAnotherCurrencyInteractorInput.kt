@@ -1,4 +1,5 @@
 package io.alekseimartoyas.financetracker.modules.anothercurrency.interactor
 
-interface AnotherCurrencyInteractorOutput {
+interface IAnotherCurrencyInteractorInput {
+    fun destructor()
 }

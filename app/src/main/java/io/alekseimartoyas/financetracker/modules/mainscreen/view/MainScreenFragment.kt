@@ -9,9 +9,9 @@ import io.alekseimartoyas.financetracker.modules.anothercurrency.view.AnotherCur
 import io.alekseimartoyas.financetracker.modules.mainscreen.configurator.MainScreenConfigurator
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 
-class MainScreenFragment: BaseFragment<MainScreenFragmentOutput>(),
-        MainScreenFragmentInput {
-    override var presenter: MainScreenFragmentOutput? = null
+class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
+        IMainScreenFragmentInput {
+    override var presenter: IMainScreenFragmentPresenter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main_screen, container, false)

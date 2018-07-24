@@ -1,4 +1,5 @@
 package io.alekseimartoyas.financetracker.modules.mainscreen.interactor
 
-interface MainScreenInteractorOutput {
+interface IMainScreenInteractorInput {
+    fun destructor()
 }
