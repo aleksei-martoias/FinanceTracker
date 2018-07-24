@@ -7,14 +7,14 @@ import io.alekseimartoyas.financetracker.modules.anothercurrency.view.AnotherCur
 
 class AnotherCurrencyConfigurator {
 
-    fun buildModule(context: AnotherCurrencyFragment) {
+    fun buildModule(view: AnotherCurrencyFragment) {
         val presenter = AnotherCurrencyPresenter()
         val interactor = AnotherCurrencyInteractor()
         val router = AnotherCurrencyRouter()
 
-        context.presenter = presenter
+        view.presenter = presenter
 
-        presenter.activity = context
+        presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
 

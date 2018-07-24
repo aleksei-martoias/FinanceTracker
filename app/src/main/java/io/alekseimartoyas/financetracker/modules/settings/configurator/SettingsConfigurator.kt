@@ -8,14 +8,14 @@ import io.alekseimartoyas.financetracker.modules.settings.view.SettingsActivity
 
 class SettingsConfigurator {
 
-    fun buildModule(context: SettingsActivity) {
+    fun buildModule(view: SettingsActivity) {
         val presenter = SettingsPresenter()
         val interactor = SettingsInteractor()
         val router = SettingsRouter()
 
-        context.presenter = presenter
+        view.presenter = presenter
 
-        presenter.activity = context
+        presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
 

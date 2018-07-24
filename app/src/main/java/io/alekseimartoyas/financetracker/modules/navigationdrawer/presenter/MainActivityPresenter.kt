@@ -15,7 +15,7 @@ class MainActivityPresenter: BasePresenter<MainActivityInput,
         MainActivityInteractorOutput {
 
     override var interactor: MainActivityInteractorInput? = null
-    override var activity: MainActivityInput? = null
+    override var view: MainActivityInput? = null
     override var router: MainActivityRouterInput? = null
     var canStartActivity = false
 
@@ -33,7 +33,7 @@ class MainActivityPresenter: BasePresenter<MainActivityInput,
     }
 
     override fun destructor() {
-        activity = null
+        view = null
         interactor?.destructor()
     }
 

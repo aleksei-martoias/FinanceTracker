@@ -15,7 +15,7 @@ class SettingsPresenter: BasePresenter<SettingsInput,
         SettingsInteractorOutput {
 
     override var interactor: SettingsInteractorInput? = null
-    override var activity: SettingsInput? = null
+    override var view: SettingsInput? = null
     override var router: SettingsRouterInput? = null
     var canStartActivity = false
 
@@ -33,7 +33,7 @@ class SettingsPresenter: BasePresenter<SettingsInput,
     }
 
     override fun destructor() {
-        activity = null
+        view = null
         interactor?.destructor()
     }
 

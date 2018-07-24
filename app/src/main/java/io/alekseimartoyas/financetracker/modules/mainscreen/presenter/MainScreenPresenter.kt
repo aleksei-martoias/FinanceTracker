@@ -13,11 +13,11 @@ class MainScreenPresenter: BasePresenter<MainScreenFragmentInput,
         MainScreenFragmentOutput, MainScreenInteractorOutput {
 
     override var interactor: MainScreenInteractorInput? = null
-    override var activity: MainScreenFragmentInput? = null
+    override var view: MainScreenFragmentInput? = null
     override var router: MainScreenRouterInput? = null
 
     override fun destructor() {
-        activity = null
+        view = null
         interactor?.destructor()
     }
 }

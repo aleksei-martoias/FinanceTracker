@@ -14,11 +14,11 @@ class AnotherCurrencyPresenter: BasePresenter<AnotherCurrencyFragmentInput,
         AnotherCurrencyInteractorOutput {
 
     override var interactor: AnotherCurrencyInteractorInput? = null
-    override var activity: AnotherCurrencyFragmentInput? = null
+    override var view: AnotherCurrencyFragmentInput? = null
     override var router: AnotherCurrencyRouterInput? = null
 
     override fun destructor() {
-        activity = null
+        view = null
         interactor?.destructor()
     }
 }

@@ -8,14 +8,14 @@ import io.alekseimartoyas.financetracker.modules.mainscreen.view.MainScreenFragm
 
 class MainScreenConfigurator {
 
-    fun buildModule(context: MainScreenFragment) {
+    fun buildModule(view: MainScreenFragment) {
         val presenter = MainScreenPresenter()
         val interactor = MainScreenInteractor()
         val router = MainScreenRouter()
 
-        context.presenter = presenter
+        view.presenter = presenter
 
-        presenter.activity = context
+        presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
 

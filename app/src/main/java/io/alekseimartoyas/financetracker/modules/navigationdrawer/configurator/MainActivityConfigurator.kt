@@ -7,14 +7,14 @@ import io.alekseimartoyas.financetracker.modules.navigationdrawer.view.MainActiv
 
 class MainActivityConfigurator {
 
-    fun buildModule(context: MainActivity) {
+    fun buildModule(view: MainActivity) {
         val presenter = MainActivityPresenter()
         val interactor = MainActivityInteractor()
         val router = MainActivityRouter()
 
-        context.presenter = presenter
+        view.presenter = presenter
 
-        presenter.activity = context
+        presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
     }
