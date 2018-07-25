@@ -1,4 +1,4 @@
-package io.alekseimartoyas.financetracker.di
+package io.alekseimartoyas.financetracker.di.modules
 
 import dagger.Module
 import dagger.Provides
