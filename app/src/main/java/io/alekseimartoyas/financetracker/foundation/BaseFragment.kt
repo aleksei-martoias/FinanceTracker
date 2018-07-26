@@ -7,6 +7,4 @@ import android.support.v4.app.Fragment
  */
 abstract class BaseFragment<Presenter>: Fragment() {
     abstract var presenter: Presenter?
-
-    abstract fun destructor()
 }

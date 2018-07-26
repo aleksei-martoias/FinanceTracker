@@ -1,9 +1,10 @@
 package io.alekseimartoyas.financetracker.foundation
 
-class BaseConfigurator {
+import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-    fun buildModule() {
+class BaseConfigurator<View, Router, Presenter: BasePresenter<View, Router>> {
 
-//        return this
+    fun buildModule(view: View) {
+//        val presenter =
     }
 }
