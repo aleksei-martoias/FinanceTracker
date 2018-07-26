@@ -1,4 +1,4 @@
-package io.alekseimartoyas.financetracker.entity
+package io.alekseimartoyas.financetracker.domain.entity
 
 import io.alekseimartoyas.financetracker.datalayer.Currency
 

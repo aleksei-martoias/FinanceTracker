@@ -5,7 +5,7 @@ import dagger.Provides
 import io.alekseimartoyas.financetracker.datalayer.Currency
 import io.alekseimartoyas.financetracker.datalayer.OperationType
 import io.alekseimartoyas.financetracker.datalayer.Transaction
-import io.alekseimartoyas.financetracker.entity.FinanceCalculating
+import io.alekseimartoyas.financetracker.domain.entity.FinanceCalculating
 
 @Module
 class FinanceCalculatingModule {

@@ -1,11 +1,10 @@
 package io.alekseimartoyas.financetracker
 
 import android.support.test.runner.AndroidJUnit4
-import android.support.v4.media.MediaMetadataCompat
 import io.alekseimartoyas.financetracker.datalayer.Currency
 import io.alekseimartoyas.financetracker.datalayer.OperationType
 import io.alekseimartoyas.financetracker.datalayer.Transaction
-import io.alekseimartoyas.financetracker.entity.FinanceCalculating
+import io.alekseimartoyas.financetracker.domain.entity.FinanceCalculating
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

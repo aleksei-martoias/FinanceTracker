@@ -4,7 +4,7 @@ import dagger.Component
 import io.alekseimartoyas.financetracker.di.modules.DataSourceModule
 import io.alekseimartoyas.financetracker.di.modules.FinanceCalculatingModule
 import io.alekseimartoyas.financetracker.di.modules.SettingsModule
-import io.alekseimartoyas.financetracker.entity.FinanceCalculating
+import io.alekseimartoyas.financetracker.domain.entity.FinanceCalculating
 import io.alekseimartoyas.financetracker.services.DataSource
 import io.alekseimartoyas.financetracker.services.SettingsSevice
 

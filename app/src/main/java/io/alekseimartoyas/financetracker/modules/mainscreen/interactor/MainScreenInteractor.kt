@@ -1,6 +1,6 @@
 package io.alekseimartoyas.financetracker.modules.mainscreen.interactor
 
-import io.alekseimartoyas.financetracker.entity.FinanceCalculatingInput
+import io.alekseimartoyas.financetracker.domain.entity.FinanceCalculatingInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseInteractor
 
 class MainScreenInteractor: BaseInteractor<IMainScreenInteractorPresenter>(),
