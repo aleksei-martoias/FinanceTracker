@@ -1,10 +1,23 @@
 package io.alekseimartoyas.financetracker.foundation
 
-import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
+abstract class BaseConfigurator<View, Router, Presenter> {
+    private var view: View? = null
+    private var presenter: Presenter? = null
+    private var router: Router? = null
 
-class BaseConfigurator<View, Router, Presenter: BasePresenter<View, Router>> {
-
-    fun buildModule(view: View) {
-//        val presenter =
+    fun setView(view: View) {
+        this.view = view
     }
+
+    fun setPresenter(presenter: Presenter) {
+        this.presenter = presenter
+    }
+
+    fun setRouter(router: Router) {
+        this.router = router
+    }
+
+    abstract fun build()
+
+    abstract fun setInteractors()
 }

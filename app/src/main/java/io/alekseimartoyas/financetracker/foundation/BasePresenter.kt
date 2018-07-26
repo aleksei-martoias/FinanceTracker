@@ -3,8 +3,7 @@ package io.alekseimartoyas.tradetracker.Foundation
 /**
  * Created by optim on 04.02.2018.
  */
-abstract class BasePresenter<View, /*Interactor,*/ Router> {
-    /*abstract var interactor: Interactor?*/
+abstract class BasePresenter<View, Router> {
     private var view: View? = null
     private var router: Router? = null
 

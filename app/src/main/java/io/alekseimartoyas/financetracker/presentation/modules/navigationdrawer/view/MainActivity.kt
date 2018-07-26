@@ -1,5 +1,6 @@
 package io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.view
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -10,12 +11,20 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.MainScreenFragment
+import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.financetracker.presentation.modules.settings.view.SettingsActivity
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<IMainActivityPresenter>(),
-        IMainActivityInput, NavigationView.OnNavigationItemSelectedListener {
+        IMainActivityInput,
+        NavigationView.OnNavigationItemSelectedListener,
+        IMainActivityRouterInput {
+
+    override fun showSettings(context: Context) {
+        context.startActivity(Intent(context, SettingsActivity::class.java))
+    }
+
     override var presenter: IMainActivityPresenter? = null
 
     var currentFragment: Int = R.id.nav_main
@@ -78,9 +87,6 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
                     startActivity(Intent(this, SettingsActivity::class.java))
 //                    presenter?.showSettings(this)
                 }
-//              R.id.nav_about_app -> {
-//                  startActivity(Intent(this, AboutAppActivity::class.java))
-//              }
             }
 
 //        item.isChecked = true
@@ -105,20 +111,4 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         presenter?.destructor()
         presenter = null
     }
-
-    //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.main, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        when (item.itemId) {
-//            R.id.action_settings -> return true
-//            else -> return super.onOptionsItemSelected(item)
-//        }
-//    }
 }

@@ -1,8 +1,10 @@
 package io.alekseimartoyas.financetracker.presentation.modules.settings.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import io.alekseimartoyas.financetracker.R
+import io.alekseimartoyas.financetracker.presentation.modules.aboutapp.view.AboutAppActivity
 import io.alekseimartoyas.financetracker.presentation.modules.settings.configurator.SettingsConfigurator
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_settings.*
@@ -29,11 +31,12 @@ class SettingsActivity : BaseActivity<ISettingsPresenter>(),
 
     override fun onStop() {
         super.onStop()
-        presenter?.blockStartActivity()
+//        presenter?.blockStartActivity()
     }
 
     fun onClickAboutApp(view: View) {
-        presenter?.showAboutApp(this)
+//        presenter?.showAboutApp(this)
+        startActivity(Intent(this, AboutAppActivity::class.java))  // to router
     }
 
     override fun onDestroy() {

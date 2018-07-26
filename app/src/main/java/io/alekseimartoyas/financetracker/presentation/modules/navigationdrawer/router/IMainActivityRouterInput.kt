@@ -2,6 +2,6 @@ package io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.
 
 import android.content.Context
 
-interface MainActivityRouterInput {
+interface IMainActivityRouterInput {
     fun showSettings(context: Context)
 }

@@ -1,22 +1,15 @@
 package io.alekseimartoyas.financetracker.presentation.modules.settings.presenter
 
 import android.content.Context
-import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.MainActivityRouterInput
-import io.alekseimartoyas.financetracker.presentation.modules.settings.interactor.ISettingsInteractorInput
-import io.alekseimartoyas.financetracker.presentation.modules.settings.interactor.ISettingsInteractorPresenter
-import io.alekseimartoyas.financetracker.presentation.modules.settings.router.SettingsRouterInput
+import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.financetracker.presentation.modules.settings.view.ISettingsActivityInput
 import io.alekseimartoyas.financetracker.presentation.modules.settings.view.ISettingsPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
 class SettingsPresenter: BasePresenter<ISettingsActivityInput,
-        /*ISettingsInteractorInput,*/
-        MainActivityRouterInput>(),
-        ISettingsPresenter/*, ISettingsInteractorPresenter*/ {
+        IMainActivityRouterInput>(),
+        ISettingsPresenter {
 
-//    override var interactor: ISettingsInteractorInput? = null
-//    override var view: ISettingsActivityInput? = null
-//    override var router: SettingsRouterInput? = null
     var canStartActivity = false
 
     override fun blockStartActivity() {
