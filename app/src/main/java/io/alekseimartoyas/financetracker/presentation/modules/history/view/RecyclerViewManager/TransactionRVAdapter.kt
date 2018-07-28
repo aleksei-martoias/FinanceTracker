@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import io.alekseimartoyas.financetracker.R
-import io.alekseimartoyas.financetracker.R.id.*
 import io.alekseimartoyas.financetracker.datalayer.Currency
 import io.alekseimartoyas.financetracker.datalayer.OperationType
 import io.alekseimartoyas.financetracker.datalayer.Transaction
@@ -21,7 +20,7 @@ class TransactionRVAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(),
                 159F,
                 Currency.USD,
                 "correcting",
-                "today"),
+                "yesterday"),
             Transaction(2,
                     OperationType.DEBIT,
                     5F,
@@ -30,7 +29,7 @@ class TransactionRVAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(),
                     "today"))
 
     override fun setData(transactions: Array<Transaction>) {
-        transactionList = transactions
+//        transactionList = transactions
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -47,19 +46,17 @@ class TransactionRVAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(),
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is ViewHolder) {
-            for (item in transactionList) {
-                holder.categoryText.text = item.category
-                holder.currencyText.text = item.currency.toString()
-                holder.operationTypeText.text = item.operationType.toString()
-                holder.quantityCurrencyText.text = item.quantity.toString()
-            }
+            holder.categoryText.text = transactionList[position].category
+            holder.currencyText.text = transactionList[position].currency.toString()
+            holder.operationTypeText.text = transactionList[position].operationType.toString()
+            holder.quantityCurrencyText.text = transactionList[position].quantity.toString()
         }
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val categoryText = view.findViewById<TextView>(category_text)!!
-        val operationTypeText = view.findViewById<TextView>(operation_type_text)!!
-        val quantityCurrencyText = view.findViewById<TextView>(quantity_currency_spinner)!!
-        val currencyText = view.findViewById<TextView>(currency_text)!!
+        val categoryText = view.findViewById<TextView>(R.id.category_text)!!
+        val operationTypeText = view.findViewById<TextView>(R.id.operation_type_text)!!
+        val quantityCurrencyText = view.findViewById<TextView>(R.id.currency_quantity_text)!!
+        val currencyText = view.findViewById<TextView>(R.id.currency_text)!!
     }
 }
