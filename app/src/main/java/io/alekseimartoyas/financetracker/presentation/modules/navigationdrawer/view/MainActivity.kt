@@ -29,7 +29,7 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
     override var presenter: IMainActivityPresenter? = null
 
     var currentFragment: Int = R.id.nav_main
-    val keyCurrentFragment = "currentFragment"
+    private val keyCurrentFragment = "currentFragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,11 +52,6 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         }
 
 //        MainActivityConfigurator().buildModule(this)
-
-        //        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
-//        }
     }
 
     override fun onResume() {
