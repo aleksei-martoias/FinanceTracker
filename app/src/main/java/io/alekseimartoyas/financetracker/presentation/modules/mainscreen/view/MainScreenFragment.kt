@@ -38,6 +38,16 @@ class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
         MainScreenConfigurator().buildModule(this)
     }
 
+    override fun onStart() {
+        super.onStart()
+        presenter?.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter?.onStop()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         presenter?.destructor()

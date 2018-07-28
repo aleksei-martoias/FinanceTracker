@@ -2,7 +2,9 @@ package io.alekseimartoyas.financetracker.presentation.modules.mainscreen.config
 
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.MainScreenPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.MainScreenFragment
+import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.PieChartManager.PieChartView
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
+import kotlinx.android.synthetic.main.fragment_main_screen.*
 
 class MainScreenConfigurator {
 
@@ -13,5 +15,6 @@ class MainScreenConfigurator {
 
         presenter.setView(view)
         presenter.setRouter(view.activity as IMainActivityRouterInput)
+        presenter.pieChart = PieChartView(view.pie_chart_view)
     }
 }

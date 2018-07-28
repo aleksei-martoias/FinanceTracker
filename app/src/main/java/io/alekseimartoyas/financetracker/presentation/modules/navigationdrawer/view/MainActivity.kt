@@ -75,19 +75,22 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
-        if (item.itemId != currentFragment)
+        if (item.itemId != currentFragment) {
             when (item.itemId) {
                 R.id.nav_main -> {
+                    currentFragment = R.id.nav_main
                     replaceFragment(MainScreenFragment())
+                }
+                R.id.nav_history -> {
+                    currentFragment = R.id.nav_history
+                    replaceFragment(HistoryFragment())
                 }
                 R.id.nav_settings -> {
                     startActivity(Intent(this, SettingsActivity::class.java))
 //                    presenter?.showSettings(this)
                 }
-                R.id.nav_history -> {
-                    replaceFragment(HistoryFragment())
-                }
             }
+        }
 
 //        item.isChecked = true
         drawer_layout.closeDrawer(GravityCompat.START)

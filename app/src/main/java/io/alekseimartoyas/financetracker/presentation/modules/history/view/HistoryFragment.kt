@@ -39,4 +39,14 @@ class HistoryFragment: BaseFragment<IHistoryFragmentPresenter>(),
 
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        presenter?.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter?.onStop()
+    }
 }

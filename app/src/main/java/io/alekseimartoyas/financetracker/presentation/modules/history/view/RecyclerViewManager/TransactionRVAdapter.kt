@@ -14,22 +14,10 @@ import io.alekseimartoyas.financetracker.presentation.modules.history.presenter.
 class TransactionRVAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(),
         ITransactionRVInput {
 
-    private var transactionList: Array<Transaction> = arrayOf(
-            Transaction(1,
-                OperationType.ENLISTMENT,
-                159F,
-                Currency.USD,
-                "correcting",
-                "yesterday"),
-            Transaction(2,
-                    OperationType.DEBIT,
-                    5F,
-                    Currency.USD,
-                    "Food",
-                    "today"))
+    private var transactionList: Array<Transaction> = arrayOf()
 
     override fun setData(transactions: Array<Transaction>) {
-//        transactionList = transactions
+        transactionList = transactions
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
