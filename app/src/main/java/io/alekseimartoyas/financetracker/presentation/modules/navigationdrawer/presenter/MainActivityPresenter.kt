@@ -6,13 +6,16 @@ import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.v
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
 class MainActivityPresenter: BasePresenter<IMainActivityInput,
-        /*IMainActivityInteractorInput,*/
         IMainActivityRouterInput>(),
-        IMainActivityPresenter/*, IMainActivityInteractorPresenter*/ {
+        IMainActivityPresenter {
+    override fun onStart() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-//    override var interactor: IMainActivityInteractorInput? = null
-//    override var view: IMainActivityInput? = null
-//    override var router: IMainActivityRouterInput? = null
+    override fun onStop() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     var canStartActivity = false
 
     override fun blockStartActivity() {

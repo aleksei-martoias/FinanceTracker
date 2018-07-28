@@ -26,4 +26,22 @@
     <!--AboutApp-->
     <string name="appInfo">Finance tracking application</string>
     <string name="devBy">Developed by Aleksei Martoyas for Mob Dev School</string>
+
+    <!--AddTransaction-->
+    <string name="quantity">Quantity</string>
+    <string-array name="operation_type">
+        <item>Income</item>
+        <item>Expenditure</item>
+    </string-array>
+    <string name="category">Category</string>
+    <string-array name="category_items">
+        <item>Products</item>
+        <item>Clothes</item>
+        <item>Health and Fitness</item>
+        <item>Investments</item>
+        <item>Communal payments</item>
+        <item>Cafe and Restaurants</item>
+        <item>Correction</item>
+        <item>Other</item>
+    </string-array>
 </resources>

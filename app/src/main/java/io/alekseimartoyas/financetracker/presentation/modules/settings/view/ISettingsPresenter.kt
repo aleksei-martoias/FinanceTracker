@@ -1,10 +1,9 @@
 package io.alekseimartoyas.financetracker.presentation.modules.settings.view
 
 import android.content.Context
+import io.alekseimartoyas.financetracker.presentation.foundation.IBaseViewPresenter
 
-interface ISettingsPresenter {
-    fun destructor()
-
+interface ISettingsPresenter: IBaseViewPresenter {
     fun blockStartActivity()
 
     fun unblockStartActivity()

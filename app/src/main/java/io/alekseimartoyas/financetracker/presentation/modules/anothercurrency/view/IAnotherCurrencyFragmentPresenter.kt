@@ -1,5 +1,6 @@
 package io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.view
 
-interface IAnotherCurrencyFragmentPresenter {
-    fun destructor()
+import io.alekseimartoyas.financetracker.presentation.foundation.IBaseViewPresenter
+
+interface IAnotherCurrencyFragmentPresenter: IBaseViewPresenter {
 }

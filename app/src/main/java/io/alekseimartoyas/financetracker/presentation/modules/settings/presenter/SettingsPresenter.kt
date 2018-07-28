@@ -8,6 +8,13 @@ import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 class SettingsPresenter: BasePresenter<ISettingsActivityInput,
         IMainActivityRouterInput>(),
         ISettingsPresenter {
+    override fun onStart() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onStop() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     var canStartActivity = false
 

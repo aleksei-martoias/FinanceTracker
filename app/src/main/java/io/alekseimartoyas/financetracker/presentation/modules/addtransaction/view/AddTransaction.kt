@@ -7,6 +7,7 @@ import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 
 class AddTransaction : BaseActivity<IAddTransactionActivityPresenter>(),
         IAddTransactionActivityInput {
+
     override var presenter: IAddTransactionActivityPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
