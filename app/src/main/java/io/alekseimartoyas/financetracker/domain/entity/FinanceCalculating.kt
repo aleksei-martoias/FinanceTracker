@@ -7,7 +7,7 @@ import io.alekseimartoyas.financetracker.datalayer.Transaction
 class FinanceCalculating(val transactions: Array<Transaction>): FinanceCalculatingInput {
 
     override fun calculateTransactionsSum(inCurrency: Currency): Float {
-        var balance: Float = 0F
+        var balance = 0F
 
         for (item in transactions)
             if (item.operationType == OperationType.ENLISTMENT) {

@@ -35,7 +35,6 @@ class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        presenter = MainScreenPresenter()
         MainScreenConfigurator().buildModule(this)
     }
 
