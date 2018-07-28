@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.view.AnotherCurrencyFragment
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.configurator.MainScreenConfigurator
+import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.IMainScreenFragmentInput
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.MainScreenPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 

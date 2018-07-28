@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.configurator.AnotherCurrencyConfigurator
+import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.presenter.IAnotherCurrencyFragmentInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 
 class AnotherCurrencyFragment: BaseFragment<IAnotherCurrencyFragmentPresenter>(),

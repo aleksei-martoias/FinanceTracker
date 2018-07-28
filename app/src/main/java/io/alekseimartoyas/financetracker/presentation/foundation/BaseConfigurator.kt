@@ -1,4 +1,4 @@
-package io.alekseimartoyas.financetracker.foundation
+package io.alekseimartoyas.financetracker.presentation.foundation
 
 abstract class BaseConfigurator<View, Router, Presenter> {
     private var view: View? = null

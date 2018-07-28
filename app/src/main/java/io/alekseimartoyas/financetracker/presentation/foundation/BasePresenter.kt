@@ -7,6 +7,10 @@ abstract class BasePresenter<View, Router> {
     private var view: View? = null
     private var router: Router? = null
 
+    abstract fun onStart()
+
+    abstract fun onStop()
+
     fun setView(view: View) {
         this.view = view
     }

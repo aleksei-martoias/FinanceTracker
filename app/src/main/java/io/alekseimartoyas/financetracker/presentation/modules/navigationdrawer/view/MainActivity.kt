@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.MainScreenFragment
+import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.presenter.IMainActivityInput
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.financetracker.presentation.modules.settings.view.SettingsActivity
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity

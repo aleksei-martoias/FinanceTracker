@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.view.MainActivity"
+            android:name=".presentation.modules.navigationdrawer.view.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,10 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="io.alekseimartoyas.financetracker.presentation.modules.settings.view.SettingsActivity"
-            android:parentActivityName="io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.view.MainActivity" />
-        <activity android:name="io.alekseimartoyas.financetracker.presentation.modules.aboutapp.view.AboutAppActivity"
-            android:parentActivityName="io.alekseimartoyas.financetracker.presentation.modules.settings.view.SettingsActivity" />
+            android:name=".presentation.modules.settings.view.SettingsActivity"
+            android:parentActivityName=".presentation.modules.navigationdrawer.view.MainActivity" />
+        <activity
+            android:name=".presentation.modules.aboutapp.view.AboutAppActivity"
+            android:parentActivityName=".presentation.modules.settings.view.SettingsActivity" />
+        <activity android:name=".presentation.modules.addtransaction.view.AddTransaction"></activity>
     </application>
 
 </manifest>

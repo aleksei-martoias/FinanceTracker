@@ -6,11 +6,12 @@ import android.view.View
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.aboutapp.view.AboutAppActivity
 import io.alekseimartoyas.financetracker.presentation.modules.settings.configurator.SettingsConfigurator
+import io.alekseimartoyas.financetracker.presentation.modules.settings.presenter.ISettingsActivityInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : BaseActivity<ISettingsPresenter>(),
-        ISettingsActivityInput{
+        ISettingsActivityInput {
     override var presenter: ISettingsPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
