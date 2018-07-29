@@ -13,7 +13,6 @@ import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 
 class AddAccountFragment: BaseFragment<IAddAccountFragmentPresenter>(),
         IAddAccountFragmentInput {
-    override var presenter: IAddAccountFragmentPresenter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_add_account, container, false)

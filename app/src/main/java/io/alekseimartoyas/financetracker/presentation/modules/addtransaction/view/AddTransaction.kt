@@ -9,8 +9,6 @@ import kotlinx.android.synthetic.main.activity_add_transaction.*
 class AddTransaction : BaseActivity<IAddTransactionActivityPresenter>(),
         IAddTransactionActivityInput {
 
-    override var presenter: IAddTransactionActivityPresenter? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_transaction)

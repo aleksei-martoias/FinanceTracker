@@ -4,8 +4,10 @@ import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.rou
 import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.IAddTransactionActivityPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class AddTransactionPresenter: BasePresenter<IAddTransactionActivityPresenter,
-        IAddTransactionRouter>() {
+class AddTransactionPresenter(view: IAddTransactionActivityInput,
+                              router: IAddTransactionRouter?):
+        BasePresenter<IAddTransactionActivityInput,
+        IAddTransactionRouter>(view, router) {
 
     override fun onStart() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

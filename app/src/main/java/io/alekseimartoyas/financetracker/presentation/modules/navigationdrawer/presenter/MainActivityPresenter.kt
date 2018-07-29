@@ -1,11 +1,13 @@
 package io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.presenter
 
-import android.content.Context
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.view.IMainActivityPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class MainActivityPresenter: BasePresenter<IMainActivityInput,
+class MainActivityPresenter(
+        view: IMainActivityInput,
+        router: IMainActivityRouterInput?):
+        BasePresenter<IMainActivityInput,
         IMainActivityRouterInput>(),
         IMainActivityPresenter {
     override fun onStart() {

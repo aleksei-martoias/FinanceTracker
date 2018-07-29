@@ -4,8 +4,10 @@ import io.alekseimartoyas.financetracker.presentation.modules.addaccount.view.IA
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class AddAccountPresenter: BasePresenter<IAddAccountFragmentInput,
-        IMainActivityRouterInput>(),
+class AddAccountPresenter(view: IAddAccountFragmentInput,
+                          router: IMainActivityRouterInput):
+        BasePresenter<IAddAccountFragmentInput,
+        IMainActivityRouterInput>(view, router),
         IAddAccountFragmentPresenter {
 
     override fun onStart() {
@@ -13,7 +15,7 @@ class AddAccountPresenter: BasePresenter<IAddAccountFragmentInput,
     }
 
     override fun backButtonTb() {
-        getRouter()?.returnFromAddAccount()
+        router?.returnFromAddAccount()
     }
 
     override fun onStop() {

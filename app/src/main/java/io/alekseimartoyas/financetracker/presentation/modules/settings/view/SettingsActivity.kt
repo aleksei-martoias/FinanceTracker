@@ -10,9 +10,9 @@ import io.alekseimartoyas.financetracker.presentation.modules.settings.presenter
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_settings.*
 
-class SettingsActivity : BaseActivity<ISettingsPresenter>(),
+class SettingsActivity:
+        BaseActivity<ISettingsPresenter>(),
         ISettingsActivityInput {
-    override var presenter: ISettingsPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,16 +27,6 @@ class SettingsActivity : BaseActivity<ISettingsPresenter>(),
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         title = resources.getString(R.string.nav_settings)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        presenter?.unblockStartActivity()
-    }
-
-    override fun onStop() {
-        super.onStop()
-//        presenter?.blockStartActivity()
     }
 
     fun onClickAboutApp(view: View) {

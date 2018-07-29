@@ -8,9 +8,10 @@ import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.IM
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class MainScreenPresenter:
+class MainScreenPresenter(view: IMainScreenFragmentInput,
+                          router: IMainActivityRouterInput):
         BasePresenter<IMainScreenFragmentInput,
-        IMainActivityRouterInput>(),
+        IMainActivityRouterInput>(view, router),
         IMainScreenFragmentPresenter {
 
     var pieChart: IPieChartViewInput? = null
@@ -32,7 +33,7 @@ class MainScreenPresenter:
     }
 
     override fun showAddAccount() {
-        getRouter()?.showAddAccount()
+        router?.showAddAccount()
     }
 
     override fun onStop() {

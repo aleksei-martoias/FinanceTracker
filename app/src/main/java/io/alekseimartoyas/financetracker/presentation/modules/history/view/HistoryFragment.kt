@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.fragment_history.*
 
 class HistoryFragment: BaseFragment<IHistoryFragmentPresenter>(),
         IHistoryFragmentInput {
-    override var presenter: IHistoryFragmentPresenter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_history, container, false)

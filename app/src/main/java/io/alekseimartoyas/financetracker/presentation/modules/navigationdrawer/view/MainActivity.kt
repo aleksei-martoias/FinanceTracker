@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
-import android.view.View
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.addaccount.view.AddAccountFragment
 import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.AddTransaction
@@ -24,8 +23,6 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         IMainActivityInput,
         NavigationView.OnNavigationItemSelectedListener,
         IMainActivityRouterInput {
-
-    override var presenter: IMainActivityPresenter? = null
 
     var currentFragment: Int = R.id.nav_main
     private val keyCurrentFragment = "currentFragment"
@@ -76,7 +73,6 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         if (item.itemId != currentFragment) {
             when (item.itemId) {
                 R.id.nav_main -> {

@@ -15,8 +15,6 @@ import kotlinx.android.synthetic.main.fragment_main_screen.*
 
 class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
         IMainScreenFragmentInput {
-    override var presenter: IMainScreenFragmentPresenter? = null
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main_screen, container, false)
 

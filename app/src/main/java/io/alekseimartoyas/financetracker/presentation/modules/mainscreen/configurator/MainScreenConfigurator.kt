@@ -9,11 +9,9 @@ import kotlinx.android.synthetic.main.fragment_main_screen.*
 class MainScreenConfigurator {
 
     fun buildModule(view: MainScreenFragment) {
-        val presenter = MainScreenPresenter()
-        presenter.setView(view)
-        presenter.setRouter(view.activity as IMainActivityRouterInput)
+        val presenter = MainScreenPresenter(view, view.activity as IMainActivityRouterInput)
         presenter.pieChart = PieChartView(view.pie_chart_view)
 
-        view.presenter = presenter
+        view.setPres(presenter)
     }
 }

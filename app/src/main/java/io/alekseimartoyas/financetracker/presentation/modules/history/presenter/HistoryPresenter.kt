@@ -8,12 +8,13 @@ import io.alekseimartoyas.financetracker.presentation.modules.history.view.Recyc
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class HistoryPresenter: BasePresenter<IHistoryFragmentInput,
-        IMainActivityRouterInput>(),
+class HistoryPresenter(view: IHistoryFragmentInput,
+                       router: IMainActivityRouterInput):
+        BasePresenter<IHistoryFragmentInput,
+        IMainActivityRouterInput>(view, router),
         IHistoryFragmentPresenter {
 
     var adapter: ITransactionRVInput? = null
-    var router: IMainActivityRouterInput? = null
 
     override fun showAddTransaction() {
         router?.showAddTransaction()

@@ -5,8 +5,10 @@ import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.r
 import io.alekseimartoyas.financetracker.presentation.modules.settings.view.ISettingsPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class SettingsPresenter: BasePresenter<ISettingsActivityInput,
-        IMainActivityRouterInput>(),
+class SettingsPresenter(view: ISettingsActivityInput,
+                        router: IMainActivityRouterInput?):
+        BasePresenter<ISettingsActivityInput,
+        IMainActivityRouterInput>(view, router),
         ISettingsPresenter {
     override fun onStart() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -14,16 +16,6 @@ class SettingsPresenter: BasePresenter<ISettingsActivityInput,
 
     override fun onStop() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    var canStartActivity = false
-
-    override fun blockStartActivity() {
-        canStartActivity = false
-    }
-
-    override fun unblockStartActivity() {
-        canStartActivity = true
     }
 
     override fun showAboutApp(context: Context) {

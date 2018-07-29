@@ -7,10 +7,8 @@ import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.r
 class AddAccountConfigurator {
 
     fun buildModule(view: AddAccountFragment) {
-        val presenter = AddAccountPresenter()
-        presenter.setView(view)
-        presenter.setRouter(view.activity as IMainActivityRouterInput)
+        val presenter = AddAccountPresenter(view, view.activity as IMainActivityRouterInput)
 
-        view.presenter = presenter
+        view.setPres(presenter)
     }
 }

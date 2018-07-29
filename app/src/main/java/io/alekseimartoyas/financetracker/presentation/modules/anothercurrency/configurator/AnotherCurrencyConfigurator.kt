@@ -9,11 +9,10 @@ import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.r
 class AnotherCurrencyConfigurator {
 
     fun buildModule(view: AnotherCurrencyFragment) {
-        val presenter = AnotherCurrencyPresenter(GetExchRateInteractor(App.graph.getExchRateProvider()))
+        val presenter = AnotherCurrencyPresenter(
+                GetExchRateInteractor(App.graph.getExchRateProvider()),
+                view, view.activity as IMainActivityRouterInput)
 
-        view.presenter = presenter
-
-        presenter.setView(view)
-        presenter.setRouter(view.activity as IMainActivityRouterInput)
+        view.setPres(presenter)
     }
 }

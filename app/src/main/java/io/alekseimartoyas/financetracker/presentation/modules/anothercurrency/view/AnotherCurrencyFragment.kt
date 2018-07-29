@@ -13,8 +13,6 @@ import kotlinx.android.synthetic.main.fragment_another_currency.*
 class AnotherCurrencyFragment: BaseFragment<IAnotherCurrencyFragmentPresenter>(),
         IAnotherCurrencyFragmentInput {
 
-    override var presenter: IAnotherCurrencyFragmentPresenter? = null
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_another_currency, container, false)
     }
