@@ -10,11 +10,10 @@ class MainScreenConfigurator {
 
     fun buildModule(view: MainScreenFragment) {
         val presenter = MainScreenPresenter()
-
-        view.presenter = presenter
-
         presenter.setView(view)
         presenter.setRouter(view.activity as IMainActivityRouterInput)
         presenter.pieChart = PieChartView(view.pie_chart_view)
+
+        view.presenter = presenter
     }
 }

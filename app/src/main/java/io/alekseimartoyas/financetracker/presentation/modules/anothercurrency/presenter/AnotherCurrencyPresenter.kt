@@ -1,18 +1,29 @@
 package io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.presenter
 
+import io.alekseimartoyas.financetracker.data.Currency
+import io.alekseimartoyas.financetracker.domain.interactors.GetExchRateInteractor
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.view.IAnotherCurrencyFragmentPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class AnotherCurrencyPresenter: BasePresenter<IAnotherCurrencyFragmentInput,
+class AnotherCurrencyPresenter(val getExchRateInteractor: GetExchRateInteractor):
+        BasePresenter<IAnotherCurrencyFragmentInput,
         IMainActivityRouterInput>(),
         IAnotherCurrencyFragmentPresenter {
-    override fun onStop() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     override fun onStart() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        getExchRateInteractor.execute { response ->
+            println()
+            //убрать отсюда
+            //пусть interactor возвращает String по параметру
+            getView()?.setExchRate(when (Currency.USD) {
+                Currency.USD -> "%.2f".format(response.Valute.USD.Value)
+                else -> ""
+            })
+        }
     }
 
+    override fun onStop() {
+        getExchRateInteractor.dispose()
+    }
 }

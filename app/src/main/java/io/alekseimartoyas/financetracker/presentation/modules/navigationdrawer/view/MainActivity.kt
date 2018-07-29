@@ -1,6 +1,5 @@
 package io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.view
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -24,14 +23,6 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         NavigationView.OnNavigationItemSelectedListener,
         IMainActivityRouterInput {
 
-    override fun showSettings() {
-        this.startActivity(Intent(this, SettingsActivity::class.java))
-    }
-
-    override fun showAddTransaction() {
-        this.startActivity(Intent(this, AddTransaction::class.java))
-    }
-
     override var presenter: IMainActivityPresenter? = null
 
     var currentFragment: Int = R.id.nav_main
@@ -40,13 +31,8 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
 
-        val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
-
+        setTb()
         nav_view.setNavigationItemSelectedListener(this)
 
         currentFragment = if (savedInstanceState == null) {
@@ -58,6 +44,15 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         }
 
 //        MainActivityConfigurator().buildModule(this)
+    }
+
+    fun setTb() {
+        setSupportActionBar(toolbar)
+
+        val toggle = ActionBarDrawerToggle(
+                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
     }
 
     override fun onResume() {
@@ -118,5 +113,13 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         super.onDestroy()
         presenter?.destructor()
         presenter = null
+    }
+
+    override fun showSettings() {
+        this.startActivity(Intent(this, SettingsActivity::class.java))
+    }
+
+    override fun showAddTransaction() {
+        this.startActivity(Intent(this, AddTransaction::class.java))
     }
 }

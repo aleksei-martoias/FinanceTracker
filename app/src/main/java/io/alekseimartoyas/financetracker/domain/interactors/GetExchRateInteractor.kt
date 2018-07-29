@@ -9,10 +9,10 @@ import io.reactivex.schedulers.Schedulers
 class GetExchRateInteractor(
         private val exchRateProvider: ExchRateProvider):
         BaseInteractor<DailyResponse,
-        String>(
+        Unit>(
                 Schedulers.io(),
                 AndroidSchedulers.mainThread()) {
 
-    override fun buildObservable(parametr: String?): Observable<DailyResponse> =
+    override fun buildObservable(parametr: Unit?): Observable<DailyResponse> =
             exchRateProvider.getExchRates()
 }
