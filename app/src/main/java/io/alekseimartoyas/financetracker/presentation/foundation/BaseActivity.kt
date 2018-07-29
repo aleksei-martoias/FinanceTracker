@@ -7,4 +7,9 @@ import android.support.v7.app.AppCompatActivity
  */
 abstract class BaseActivity<Presenter>: AppCompatActivity() {
     abstract var presenter: Presenter?
+
+//    override fun onStart() {
+//        super.onStart()
+//        presenter?.onStart
+//    }
 }
