@@ -14,9 +14,17 @@
     <string name="nav_history">History</string>
     <string name="other">Other</string>
 
+    <string name="add_button">Add</string>
+
+    <string-array name="all_currency">
+        <item>RUB</item>
+        <item>USD</item>
+    </string-array>
+
     <!--fragment_main_screen-->
     <string name="balance">Balance</string>
     <string name="RUB">RUB</string>
+    <string name="USD">USD</string>
     <string name="new_account">Add Account</string>
 
     <!--fragment_another_currency-->
@@ -48,6 +56,19 @@
         <item>Other</item>
     </string-array>
 
-    <!--AddTransaction-->
-    <string name="AddTrTitle">Add</string>
+    <!--AddAccount-->
+    <string name="choose_account_type">Choose type of account</string>
+    <string name="choose_currency_type">Choose type of currency</string>
+    <string-array name="account_type">
+        <item>Wallet</item>
+        <item>Card</item>
+    </string-array>
+
+    <!--Will removed-->
+    <string-array name="accounts_test">
+        <item>card1</item>
+        <item>wallet1</item>
+        <item>card2</item>
+        <item>all</item>
+    </string-array>
 </resources>

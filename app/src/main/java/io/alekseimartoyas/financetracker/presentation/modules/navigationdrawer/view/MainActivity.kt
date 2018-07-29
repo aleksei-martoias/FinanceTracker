@@ -8,7 +8,9 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
+import android.view.View
 import io.alekseimartoyas.financetracker.R
+import io.alekseimartoyas.financetracker.presentation.modules.addaccount.view.AddAccountFragment
 import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.AddTransaction
 import io.alekseimartoyas.financetracker.presentation.modules.history.view.HistoryFragment
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.MainScreenFragment
@@ -121,5 +123,20 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
 
     override fun showAddTransaction() {
         this.startActivity(Intent(this, AddTransaction::class.java))
+    }
+
+    override fun showAddAccount() {
+        supportFragmentManager  //вынести
+                .beginTransaction()
+                .replace(R.id.main_frame, AddAccountFragment(), "visible_fragment")
+                .addToBackStack(null)
+                .commit()
+    }
+
+    override fun returnFromAddAccount() {
+        supportFragmentManager.beginTransaction()
+                .remove(supportFragmentManager.findFragmentByTag("visible_fragment"))
+                .commit()
+//        supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 }

@@ -4,5 +4,5 @@ import io.alekseimartoyas.financetracker.presentation.foundation.IBaseViewPresen
 import io.alekseimartoyas.financetracker.presentation.modules.history.view.RecyclerViewManager.TransactionRVAdapter
 
 interface IMainScreenFragmentPresenter: IBaseViewPresenter {
-
+    fun showAddAccount()
 }

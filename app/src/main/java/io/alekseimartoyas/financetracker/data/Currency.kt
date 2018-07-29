@@ -1,6 +1,8 @@
 package io.alekseimartoyas.financetracker.data
 
-enum class Currency {
-    RUB,
-    USD
+import io.alekseimartoyas.financetracker.R
+
+enum class Currency(val strId: Int) {
+    RUB(R.string.RUB),
+    USD(R.string.USD)
 }

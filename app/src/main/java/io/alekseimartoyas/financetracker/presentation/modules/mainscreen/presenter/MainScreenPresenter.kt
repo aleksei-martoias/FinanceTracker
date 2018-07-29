@@ -31,6 +31,10 @@ class MainScreenPresenter:
                         "today")))
     }
 
+    override fun showAddAccount() {
+        getRouter()?.showAddAccount()
+    }
+
     override fun onStop() {
         pieChart?.destructor()  //  может не надо это делать в onStop, хотя data может измениться
     }

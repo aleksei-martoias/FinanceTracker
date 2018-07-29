@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.view.AnotherCurrencyFragment
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.configurator.MainScreenConfigurator
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.IMainScreenFragmentInput
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.MainScreenPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
+import kotlinx.android.synthetic.main.fragment_main_screen.*
 
 class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
         IMainScreenFragmentInput {
@@ -36,6 +38,14 @@ class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
         super.onActivityCreated(savedInstanceState)
 
         MainScreenConfigurator().buildModule(this)
+
+        setAddAccountBtListener()
+    }
+
+    fun setAddAccountBtListener() {
+        add_account_bt.setOnClickListener {
+//            presenter?.showAddAccount()
+        }
     }
 
     override fun onStart() {

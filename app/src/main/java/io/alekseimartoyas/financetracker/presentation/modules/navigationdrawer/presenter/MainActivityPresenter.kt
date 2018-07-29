@@ -16,17 +16,17 @@ class MainActivityPresenter: BasePresenter<IMainActivityInput,
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    var canStartActivity = false
+//    var canStartActivity = false
 
     override fun blockStartActivity() {
-        canStartActivity = false
+//        canStartActivity = false
     }
 
     override fun unblockStartActivity() {
-        canStartActivity = true
+//        canStartActivity = true
     }
 
-    override fun showSettings(context: Context) {
+    override fun showSettings() {
 //        if (canStartActivity)
 //            router?.showSettings(context)
     }
