@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import io.alekseimartoyas.financetracker.R
-import io.alekseimartoyas.financetracker.datalayer.Currency
-import io.alekseimartoyas.financetracker.datalayer.OperationType
-import io.alekseimartoyas.financetracker.datalayer.Transaction
+import io.alekseimartoyas.financetracker.data.Transaction
 import io.alekseimartoyas.financetracker.presentation.modules.history.presenter.ITransactionRVInput
 
 class TransactionRVAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(),

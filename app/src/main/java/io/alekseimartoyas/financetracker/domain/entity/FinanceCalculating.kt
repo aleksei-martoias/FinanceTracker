@@ -1,8 +1,8 @@
 package io.alekseimartoyas.financetracker.domain.entity
 
-import io.alekseimartoyas.financetracker.datalayer.Currency
-import io.alekseimartoyas.financetracker.datalayer.OperationType
-import io.alekseimartoyas.financetracker.datalayer.Transaction
+import io.alekseimartoyas.financetracker.data.Currency
+import io.alekseimartoyas.financetracker.data.OperationType
+import io.alekseimartoyas.financetracker.data.Transaction
 
 class FinanceCalculating(val transactions: Array<Transaction>): FinanceCalculatingInput {
 

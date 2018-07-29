@@ -1,12 +1,11 @@
 package io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.PieChartManager
 
 import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.utils.ColorTemplate
-import io.alekseimartoyas.financetracker.datalayer.Transaction
+import io.alekseimartoyas.financetracker.data.Transaction
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.IPieChartViewInput
 
 class PieChartView(chart: PieChart): IPieChartViewInput {

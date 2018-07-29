@@ -31,4 +31,6 @@
             android:parentActivityName=".presentation.modules.navigationdrawer.view.MainActivity"/>
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>

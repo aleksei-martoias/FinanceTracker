@@ -1,8 +1,8 @@
 package io.alekseimartoyas.financetracker
 
-import io.alekseimartoyas.financetracker.datalayer.Currency
-import io.alekseimartoyas.financetracker.datalayer.OperationType
-import io.alekseimartoyas.financetracker.datalayer.Transaction
+import io.alekseimartoyas.financetracker.data.Currency
+import io.alekseimartoyas.financetracker.data.OperationType
+import io.alekseimartoyas.financetracker.data.Transaction
 import io.alekseimartoyas.financetracker.domain.entity.FinanceCalculating
 import org.junit.Assert
 import org.junit.Test

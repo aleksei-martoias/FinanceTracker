@@ -1,6 +1,6 @@
 package io.alekseimartoyas.financetracker.services
 
-import io.alekseimartoyas.financetracker.datalayer.Transaction
+import io.alekseimartoyas.financetracker.data.Transaction
 import io.alekseimartoyas.financetracker.domain.dinversion.IDataSourceInput
 
 class DataSource: IDataSourceInput {

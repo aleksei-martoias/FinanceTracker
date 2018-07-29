@@ -5,7 +5,7 @@ import io.reactivex.Scheduler
 import io.reactivex.disposables.Disposable
 
 abstract class BaseInteractor<ResulType, ParametrType>(
-        private val jobScheduler: Scheduler,
+        protected val jobScheduler: Scheduler,
         private val uiScheduler: Scheduler) {
     private var disposable: Disposable? = null
 

@@ -1,6 +1,4 @@
-package io.alekseimartoyas.financetracker.datalayer
-
-import java.util.*
+package io.alekseimartoyas.financetracker.data
 
 class Transaction(val id: Int,
                   val operationType: OperationType,

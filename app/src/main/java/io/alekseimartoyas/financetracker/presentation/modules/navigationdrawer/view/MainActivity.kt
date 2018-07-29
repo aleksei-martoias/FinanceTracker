@@ -54,7 +54,7 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
             nav_view.setCheckedItem(R.id.nav_main)
             R.id.nav_main
         } else {
-            savedInstanceState?.getInt(keyCurrentFragment)
+            savedInstanceState.getInt(keyCurrentFragment)
         }
 
 //        MainActivityConfigurator().buildModule(this)
