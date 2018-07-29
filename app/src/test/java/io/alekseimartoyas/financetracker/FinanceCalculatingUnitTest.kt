@@ -2,7 +2,7 @@ package io.alekseimartoyas.financetracker
 
 import io.alekseimartoyas.financetracker.data.Currency
 import io.alekseimartoyas.financetracker.data.OperationType
-import io.alekseimartoyas.financetracker.data.Transaction
+import io.alekseimartoyas.financetracker.data.local.Transaction
 import io.alekseimartoyas.financetracker.domain.entity.FinanceCalculating
 import org.junit.Assert
 import org.junit.Test
@@ -12,7 +12,7 @@ class FinanceCalculatingUnitTest {
     @Test
     fun sumEqualCurrencies() {
         val transactions = arrayOf(Transaction(0, OperationType.ENLISTMENT, 4F, Currency.RUB, "", ""),
-            Transaction(0, OperationType.ENLISTMENT, 5F, Currency.RUB, "", ""))
+                Transaction(0, OperationType.ENLISTMENT, 5F, Currency.RUB, "", ""))
         val logic = FinanceCalculating(transactions)
         Assert.assertEquals(9F, logic.calculateTransactionsSum(Currency.RUB))
     }

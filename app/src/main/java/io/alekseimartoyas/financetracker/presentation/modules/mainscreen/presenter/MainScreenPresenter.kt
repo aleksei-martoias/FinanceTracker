@@ -2,8 +2,7 @@ package io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presen
 
 import io.alekseimartoyas.financetracker.data.Currency
 import io.alekseimartoyas.financetracker.data.OperationType
-import io.alekseimartoyas.financetracker.data.Transaction
-import io.alekseimartoyas.financetracker.domain.interactors.GetExchRateInteractor
+import io.alekseimartoyas.financetracker.data.local.Transaction
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.IMainScreenFragmentPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter

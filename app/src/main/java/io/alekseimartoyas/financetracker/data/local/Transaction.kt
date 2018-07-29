@@ -1,4 +1,7 @@
-package io.alekseimartoyas.financetracker.data
+package io.alekseimartoyas.financetracker.data.local
+
+import io.alekseimartoyas.financetracker.data.Currency
+import io.alekseimartoyas.financetracker.data.OperationType
 
 class Transaction(val id: Int,
                   val operationType: OperationType,

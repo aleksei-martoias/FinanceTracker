@@ -34,6 +34,15 @@ class SettingsActivity:
         startActivity(Intent(this, AboutAppActivity::class.java))  // to router
     }
 
+    fun onClickFeedback(view: View) {
+        val emailIntent = Intent(Intent.ACTION_SENDTO)
+        emailIntent.type = "text/plain"
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, "someAddress@gmail.com")
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "FinanceTracker feedback")
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Good Application, thank you.")
+        startActivity(Intent.createChooser(intent, "Send email"))
+    }
+
     override fun onDestroy() {
         super.onDestroy()
 

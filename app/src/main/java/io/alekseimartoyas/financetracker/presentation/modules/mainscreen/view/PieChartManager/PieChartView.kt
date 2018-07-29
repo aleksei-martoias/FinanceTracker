@@ -5,7 +5,7 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.utils.ColorTemplate
-import io.alekseimartoyas.financetracker.data.Transaction
+import io.alekseimartoyas.financetracker.data.local.Transaction
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.IPieChartViewInput
 
 class PieChartView(chart: PieChart): IPieChartViewInput {
