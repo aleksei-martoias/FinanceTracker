@@ -13,7 +13,6 @@ class AnotherCurrencyPresenter(val getExchRateInteractor: GetExchRateInteractor)
 
     override fun onStart() {
         getExchRateInteractor.execute { response ->
-            println()
             //убрать отсюда
             //пусть interactor возвращает String по параметру
             getView()?.setExchRate(when (Currency.USD) {

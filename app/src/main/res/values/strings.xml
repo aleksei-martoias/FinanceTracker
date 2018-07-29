@@ -17,6 +17,7 @@
     <!--fragment_main_screen-->
     <string name="balance">Balance</string>
     <string name="RUB">RUB</string>
+    <string name="new_account">Add Account</string>
 
     <!--fragment_another_currency-->
     <string-array name="currency_spinner">
