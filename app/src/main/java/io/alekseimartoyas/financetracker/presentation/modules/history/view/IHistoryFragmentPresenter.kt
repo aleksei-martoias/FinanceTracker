@@ -5,4 +5,5 @@ import io.alekseimartoyas.financetracker.presentation.modules.history.view.Recyc
 
 interface IHistoryFragmentPresenter: IBaseViewPresenter {
     fun getAdapter(): TransactionRVAdapter?
+    fun showAddTransaction()
 }

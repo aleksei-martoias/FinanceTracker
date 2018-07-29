@@ -3,5 +3,6 @@ package io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.
 import android.content.Context
 
 interface IMainActivityRouterInput {
-    fun showSettings(context: Context)
+    fun showSettings()
+    fun showAddTransaction()
 }

@@ -30,11 +30,12 @@
 
     <!--AddTransaction-->
     <string name="quantity">Quantity</string>
+    <string name="category">Category</string>
+    <string name="account">Account</string>
     <string-array name="operation_type">
         <item>Income</item>
         <item>Expenditure</item>
     </string-array>
-    <string name="category">Category</string>
     <string-array name="category_items">
         <item>Products</item>
         <item>Clothes</item>
@@ -45,4 +46,7 @@
         <item>Correction</item>
         <item>Other</item>
     </string-array>
+
+    <!--AddTransaction-->
+    <string name="AddTrTitle">Add</string>
 </resources>

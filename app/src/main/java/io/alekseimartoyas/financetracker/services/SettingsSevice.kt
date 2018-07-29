@@ -1,4 +1,6 @@
 package io.alekseimartoyas.financetracker.services
 
-class SettingsSevice: SettingsSeviceInput {
+import io.alekseimartoyas.financetracker.domain.dinversion.ISettingsSeviceInput
+
+class SettingsSevice: ISettingsSeviceInput {
 }

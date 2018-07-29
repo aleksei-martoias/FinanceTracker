@@ -28,7 +28,7 @@ class PieChartView(chart: PieChart): IPieChartViewInput {
 
         var pieEntries = mutableListOf<PieEntry>()
 
-        val colors = mutableListOf<Int>()
+//        val colors = mutableListOf<Int>()
 
         for (item in pieData) {
             val value = PieEntry(item.value, item.key)
@@ -47,7 +47,7 @@ class PieChartView(chart: PieChart): IPieChartViewInput {
         chart?.setDrawEntryLabels(false)
         chart?.description?.isEnabled = false
         chart?.setUsePercentValues(true)
-        chart?.legend?.position = Legend.LegendPosition.BELOW_CHART_CENTER
+//        chart?.legend?.position = Legend.LegendPosition.BELOW_CHART_CENTER
         chart?.legend?.isWordWrapEnabled = true
         chart?.legend?.textSize = 14f
         chart?.invalidate()

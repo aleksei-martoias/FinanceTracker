@@ -17,12 +17,16 @@ class SettingsActivity : BaseActivity<ISettingsPresenter>(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
+        setTb()
+        SettingsConfigurator().buildModule(this)
+    }
+
+    private fun setTb() {
         setSupportActionBar(toolbar_settings)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         title = resources.getString(R.string.nav_settings)
-
-        SettingsConfigurator().buildModule(this)
     }
 
     override fun onResume() {

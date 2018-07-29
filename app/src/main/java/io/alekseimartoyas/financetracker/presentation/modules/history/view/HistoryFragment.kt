@@ -35,8 +35,8 @@ class HistoryFragment: BaseFragment<IHistoryFragmentPresenter>(),
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        add_transaction_fab.setOnClickListener { view ->
-
+        add_transaction_fab.setOnClickListener {
+            presenter?.showAddTransaction()
         }
     }
 

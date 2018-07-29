@@ -10,6 +10,7 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
+import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.AddTransaction
 import io.alekseimartoyas.financetracker.presentation.modules.history.view.HistoryFragment
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.MainScreenFragment
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.presenter.IMainActivityInput
@@ -23,8 +24,12 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         NavigationView.OnNavigationItemSelectedListener,
         IMainActivityRouterInput {
 
-    override fun showSettings(context: Context) {
-        context.startActivity(Intent(context, SettingsActivity::class.java))
+    override fun showSettings() {
+        this.startActivity(Intent(this, SettingsActivity::class.java))
+    }
+
+    override fun showAddTransaction() {
+        this.startActivity(Intent(this, AddTransaction::class.java))
     }
 
     override var presenter: IMainActivityPresenter? = null
