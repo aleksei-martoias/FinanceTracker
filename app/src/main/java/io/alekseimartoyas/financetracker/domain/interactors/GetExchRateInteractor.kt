@@ -6,8 +6,7 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class GetExchRateInteractor(
-        private val exchRateProvider: ExchRateProvider):
+class GetExchRateInteractor(private val exchRateProvider: ExchRateProvider):
         BaseInteractor<DailyResponse,
         Unit>(
                 Schedulers.io(),
