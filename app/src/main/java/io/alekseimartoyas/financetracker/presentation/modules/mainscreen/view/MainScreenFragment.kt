@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.view.AnotherCurrencyFragment
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.configurator.MainScreenConfigurator
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.IMainScreenFragmentInput
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.presenter.MainScreenPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
+import kotlinx.android.synthetic.main.fragment_main_screen.*
 
 class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
         IMainScreenFragmentInput {
-    override var presenter: IMainScreenFragmentPresenter? = null
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_main_screen, container, false)
 
@@ -35,8 +35,25 @@ class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        presenter = MainScreenPresenter()
         MainScreenConfigurator().buildModule(this)
+
+        setAddAccountBtListener()
+    }
+
+    fun setAddAccountBtListener() {
+        add_account_bt.setOnClickListener {
+//            presenter?.showAddAccount()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter?.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter?.onStop()
     }
 
     override fun onDestroy() {

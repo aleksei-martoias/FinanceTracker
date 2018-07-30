@@ -8,11 +8,10 @@ import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.configurator.AnotherCurrencyConfigurator
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.presenter.IAnotherCurrencyFragmentInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
+import kotlinx.android.synthetic.main.fragment_another_currency.*
 
 class AnotherCurrencyFragment: BaseFragment<IAnotherCurrencyFragmentPresenter>(),
         IAnotherCurrencyFragmentInput {
-
-    override var presenter: IAnotherCurrencyFragmentPresenter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_another_currency, container, false)
@@ -22,6 +21,22 @@ class AnotherCurrencyFragment: BaseFragment<IAnotherCurrencyFragmentPresenter>()
         super.onActivityCreated(savedInstanceState)
 
         AnotherCurrencyConfigurator().buildModule(this)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter?.onStart()
+    }
+
+    override fun setExchRate(data: String) {
+        //переделать отношение
+        //относительно рубля или чего либо
+        chang_anoth_curr2.text = "$data ${resources.getString(R.string.RUB)}"
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter?.onStop()
     }
 
     override fun onDestroy() {

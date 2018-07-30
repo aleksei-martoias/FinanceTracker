@@ -1,13 +1,13 @@
 package io.alekseimartoyas.financetracker.domain.entity
 
-import io.alekseimartoyas.financetracker.datalayer.Currency
-import io.alekseimartoyas.financetracker.datalayer.OperationType
-import io.alekseimartoyas.financetracker.datalayer.Transaction
+import io.alekseimartoyas.financetracker.data.Currency
+import io.alekseimartoyas.financetracker.data.OperationType
+import io.alekseimartoyas.financetracker.data.local.Transaction
 
 class FinanceCalculating(val transactions: Array<Transaction>): FinanceCalculatingInput {
 
     override fun calculateTransactionsSum(inCurrency: Currency): Float {
-        var balance: Float = 0F
+        var balance = 0F
 
         for (item in transactions)
             if (item.operationType == OperationType.ENLISTMENT) {

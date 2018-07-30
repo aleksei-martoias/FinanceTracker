@@ -6,5 +6,9 @@ import android.support.v4.app.Fragment
  * Created by optim on 04.02.2018.
  */
 abstract class BaseFragment<Presenter>: Fragment() {
-    abstract var presenter: Presenter?
+    protected var presenter: Presenter? = null
+
+    fun setPres(presenter: Presenter) {
+        this.presenter = presenter
+    }
 }

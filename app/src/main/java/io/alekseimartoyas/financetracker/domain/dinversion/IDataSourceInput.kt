@@ -1,8 +1,8 @@
-package io.alekseimartoyas.financetracker.services
+package io.alekseimartoyas.financetracker.domain.dinversion
 
-import io.alekseimartoyas.financetracker.datalayer.Transaction
+import io.alekseimartoyas.financetracker.data.local.Transaction
 
-interface DataSourceInput {
+interface IDataSourceInput {
     fun addTransaction(transaction: Transaction)
 
     fun addTransactions(transactions: Array<Transaction>)

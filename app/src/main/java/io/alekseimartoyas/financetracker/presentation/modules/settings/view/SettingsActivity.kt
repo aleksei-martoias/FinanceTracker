@@ -10,34 +10,37 @@ import io.alekseimartoyas.financetracker.presentation.modules.settings.presenter
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_settings.*
 
-class SettingsActivity : BaseActivity<ISettingsPresenter>(),
+class SettingsActivity:
+        BaseActivity<ISettingsPresenter>(),
         ISettingsActivityInput {
-    override var presenter: ISettingsPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
+        setTb()
+        SettingsConfigurator().buildModule(this)
+    }
+
+    private fun setTb() {
         setSupportActionBar(toolbar_settings)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         title = resources.getString(R.string.nav_settings)
-
-        SettingsConfigurator().buildModule(this)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        presenter?.unblockStartActivity()
-    }
-
-    override fun onStop() {
-        super.onStop()
-//        presenter?.blockStartActivity()
     }
 
     fun onClickAboutApp(view: View) {
 //        presenter?.showAboutApp(this)
         startActivity(Intent(this, AboutAppActivity::class.java))  // to router
+    }
+
+    fun onClickFeedback(view: View) {
+        val emailIntent = Intent(Intent.ACTION_SENDTO)
+        emailIntent.type = "text/plain"
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, "someAddress@gmail.com")
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "FinanceTracker feedback")
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Good Application, thank you.")
+        startActivity(Intent.createChooser(intent, "Send email"))
     }
 
     override fun onDestroy() {

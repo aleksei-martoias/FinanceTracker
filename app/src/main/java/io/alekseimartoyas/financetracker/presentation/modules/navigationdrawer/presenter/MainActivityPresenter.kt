@@ -1,11 +1,13 @@
 package io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.presenter
 
-import android.content.Context
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.view.IMainActivityPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
-class MainActivityPresenter: BasePresenter<IMainActivityInput,
+class MainActivityPresenter(
+        view: IMainActivityInput,
+        router: IMainActivityRouterInput?):
+        BasePresenter<IMainActivityInput,
         IMainActivityRouterInput>(),
         IMainActivityPresenter {
     override fun onStart() {
@@ -16,17 +18,17 @@ class MainActivityPresenter: BasePresenter<IMainActivityInput,
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    var canStartActivity = false
+//    var canStartActivity = false
 
     override fun blockStartActivity() {
-        canStartActivity = false
+//        canStartActivity = false
     }
 
     override fun unblockStartActivity() {
-        canStartActivity = true
+//        canStartActivity = true
     }
 
-    override fun showSettings(context: Context) {
+    override fun showSettings() {
 //        if (canStartActivity)
 //            router?.showSettings(context)
     }

@@ -1,6 +1,5 @@
 package io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.view
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -10,6 +9,9 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
+import io.alekseimartoyas.financetracker.presentation.modules.addaccount.view.AddAccountFragment
+import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.AddTransaction
+import io.alekseimartoyas.financetracker.presentation.modules.history.view.HistoryFragment
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.MainScreenFragment
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.presenter.IMainActivityInput
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
@@ -22,25 +24,14 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         NavigationView.OnNavigationItemSelectedListener,
         IMainActivityRouterInput {
 
-    override fun showSettings(context: Context) {
-        context.startActivity(Intent(context, SettingsActivity::class.java))
-    }
-
-    override var presenter: IMainActivityPresenter? = null
-
     var currentFragment: Int = R.id.nav_main
-    val keyCurrentFragment = "currentFragment"
+    private val keyCurrentFragment = "currentFragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
 
-        val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
-
+        setTb()
         nav_view.setNavigationItemSelectedListener(this)
 
         currentFragment = if (savedInstanceState == null) {
@@ -48,15 +39,19 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
             nav_view.setCheckedItem(R.id.nav_main)
             R.id.nav_main
         } else {
-            savedInstanceState?.getInt(keyCurrentFragment)
+            savedInstanceState.getInt(keyCurrentFragment)
         }
 
 //        MainActivityConfigurator().buildModule(this)
+    }
 
-        //        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
-//        }
+    fun setTb() {
+        setSupportActionBar(toolbar)
+
+        val toggle = ActionBarDrawerToggle(
+                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
     }
 
     override fun onResume() {
@@ -78,17 +73,22 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        if (item.itemId != currentFragment)
+        if (item.itemId != currentFragment) {
             when (item.itemId) {
                 R.id.nav_main -> {
+                    currentFragment = R.id.nav_main
                     replaceFragment(MainScreenFragment())
+                }
+                R.id.nav_history -> {
+                    currentFragment = R.id.nav_history
+                    replaceFragment(HistoryFragment())
                 }
                 R.id.nav_settings -> {
                     startActivity(Intent(this, SettingsActivity::class.java))
 //                    presenter?.showSettings(this)
                 }
             }
+        }
 
 //        item.isChecked = true
         drawer_layout.closeDrawer(GravityCompat.START)
@@ -111,5 +111,28 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
         super.onDestroy()
         presenter?.destructor()
         presenter = null
+    }
+
+    override fun showSettings() {
+        this.startActivity(Intent(this, SettingsActivity::class.java))
+    }
+
+    override fun showAddTransaction() {
+        this.startActivity(Intent(this, AddTransaction::class.java))
+    }
+
+    override fun showAddAccount() {
+        supportFragmentManager  //вынести
+                .beginTransaction()
+                .replace(R.id.main_frame, AddAccountFragment(), "visible_fragment")
+                .addToBackStack(null)
+                .commit()
+    }
+
+    override fun returnFromAddAccount() {
+        supportFragmentManager.beginTransaction()
+                .remove(supportFragmentManager.findFragmentByTag("visible_fragment"))
+                .commit()
+//        supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 }

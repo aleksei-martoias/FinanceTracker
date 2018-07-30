@@ -5,7 +5,7 @@ import android.content.Intent
 import io.alekseimartoyas.financetracker.presentation.modules.aboutapp.view.AboutAppActivity
 
 class SettingsRouter: SettingsRouterInput {
-    override fun showAboutApp(context: Context) {
-        context.startActivity(Intent(context, AboutAppActivity::class.java))
-    }
+//    override fun showAboutApp() {
+//        context.startActivity(Intent(context, AboutAppActivity::class.java))
+//    }
 }
