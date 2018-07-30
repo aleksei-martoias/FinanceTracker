@@ -8,12 +8,11 @@ import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.r
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
 class MainScreenPresenter(view: IMainScreenFragmentInput,
-                          router: IMainActivityRouterInput):
+                          router: IMainActivityRouterInput,
+                          var pieChart: IPieChartViewInput? = null):
         BasePresenter<IMainScreenFragmentInput,
         IMainActivityRouterInput>(view, router),
         IMainScreenFragmentPresenter {
-
-    var pieChart: IPieChartViewInput? = null
 
     override fun onStart() {
         pieChart?.changeData(listOf(
@@ -39,4 +38,9 @@ class MainScreenPresenter(view: IMainScreenFragmentInput,
         pieChart?.destructor()  //  может не надо это делать в onStop, хотя data может измениться
     }
 
+    override fun destructor() {
+        super.destructor()
+        view = null
+        pieChart?.destructor()
+    }
 }

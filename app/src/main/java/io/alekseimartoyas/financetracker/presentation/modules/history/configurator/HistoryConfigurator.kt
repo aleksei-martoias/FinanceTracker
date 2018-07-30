@@ -8,8 +8,9 @@ import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.r
 class HistoryConfigurator {
 
     fun buildModule(view: HistoryFragment) {
-        val presenter = HistoryPresenter(view, view.activity as IMainActivityRouterInput)
-        presenter.adapter = TransactionRVAdapter()
+        val presenter = HistoryPresenter(view,
+                view.activity as IMainActivityRouterInput,
+                TransactionRVAdapter())
         
         view.setPres(presenter)
     }

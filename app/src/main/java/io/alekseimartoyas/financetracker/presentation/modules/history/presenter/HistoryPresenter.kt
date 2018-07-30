@@ -9,12 +9,11 @@ import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.r
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
 class HistoryPresenter(view: IHistoryFragmentInput,
-                       router: IMainActivityRouterInput):
+                       router: IMainActivityRouterInput,
+                       var adapter: ITransactionRVInput? = null):
         BasePresenter<IHistoryFragmentInput,
         IMainActivityRouterInput>(view, router),
         IHistoryFragmentPresenter {
-
-    var adapter: ITransactionRVInput? = null
 
     override fun showAddTransaction() {
         router?.showAddTransaction()
