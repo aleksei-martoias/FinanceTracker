@@ -2,11 +2,12 @@ package io.alekseimartoyas.financetracker.presentation.modules.addtransaction.vi
 
 import android.os.Bundle
 import io.alekseimartoyas.financetracker.R
+import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.presenter.AddTransactionPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.presenter.IAddTransactionActivityInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_add_transaction.*
 
-class AddTransactionActivity : BaseActivity<IAddTransactionActivityPresenter>(),
+class AddTransactionActivity : BaseActivity<AddTransactionPresenter>(),
         IAddTransactionActivityInput {
 
     override fun onCreate(savedInstanceState: Bundle?) {

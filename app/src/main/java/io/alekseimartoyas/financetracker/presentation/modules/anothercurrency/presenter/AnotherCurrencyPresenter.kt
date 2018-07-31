@@ -2,7 +2,6 @@ package io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.p
 
 import io.alekseimartoyas.financetracker.domain.Currency
 import io.alekseimartoyas.financetracker.domain.interactors.GetExchRateInteractor
-import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.view.IAnotherCurrencyFragmentPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
@@ -10,8 +9,7 @@ class AnotherCurrencyPresenter(val getExchRateInteractor: GetExchRateInteractor,
                                view: IAnotherCurrencyFragmentInput,
                                router: IMainActivityRouterInput):
         BasePresenter<IAnotherCurrencyFragmentInput,
-        IMainActivityRouterInput>(view, router),
-        IAnotherCurrencyFragmentPresenter {
+        IMainActivityRouterInput>(view, router) {
 
     override fun onStart() {
         getExchRateInteractor.execute { response ->

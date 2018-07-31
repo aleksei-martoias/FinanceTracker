@@ -13,7 +13,7 @@ import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.present
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 import kotlinx.android.synthetic.main.fragment_main_screen.*
 
-class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
+class MainScreenFragment: BaseFragment<MainScreenPresenter>(),
         IMainScreenFragmentInput {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main_screen, container, false)
@@ -45,6 +45,8 @@ class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
     override fun onStart() {
         super.onStart()
         presenter?.onStart()
+        presenter?.getAccountsId()
+        presenter?.getAccountData(/*selected*/1)
     }
 
     override fun onStop() {
