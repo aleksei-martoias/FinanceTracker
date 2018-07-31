@@ -6,15 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".presentation.modules.addtransaction.view.AddTransactionActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_add_transaction"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <include
+        android:id="@+id/toolbar_add_transaction_activity"
+        layout="@layout/toolbar" />
 
     <Spinner
         android:id="@+id/operation_type_spinner"
@@ -26,7 +20,7 @@
         android:entries="@array/operation_type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_add_transaction" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_add_transaction_activity" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"

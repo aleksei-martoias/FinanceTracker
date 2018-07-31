@@ -7,6 +7,7 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.addaccount.view.AddAccountFragment
@@ -19,6 +20,7 @@ import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.r
 import io.alekseimartoyas.financetracker.presentation.modules.settings.view.SettingsActivity
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : BaseActivity<MainActivityPresenter>(),
         IMainActivityInput,
@@ -47,10 +49,10 @@ class MainActivity : BaseActivity<MainActivityPresenter>(),
     }
 
     fun setTb() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar_main_activity as Toolbar)
 
         val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+                this, drawer_layout, toolbar_main_activity as Toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
     }

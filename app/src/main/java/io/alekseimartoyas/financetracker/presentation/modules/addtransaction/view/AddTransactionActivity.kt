@@ -1,6 +1,7 @@
 package io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view
 
 import android.os.Bundle
+import android.support.v7.widget.Toolbar
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.presenter.AddTransactionPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.presenter.IAddTransactionActivityInput
@@ -18,7 +19,7 @@ class AddTransactionActivity : BaseActivity<AddTransactionPresenter>(),
     }
 
     private fun confTb() {
-        setSupportActionBar(toolbar_add_transaction)
+        setSupportActionBar(toolbar_add_transaction_activity as Toolbar)
         title = resources.getString(R.string.add_button)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
