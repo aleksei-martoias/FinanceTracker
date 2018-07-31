@@ -1,7 +1,7 @@
 package io.alekseimartoyas.financetracker.presentation.modules.history.presenter
 
-import io.alekseimartoyas.financetracker.data.Currency
-import io.alekseimartoyas.financetracker.data.OperationType
+import io.alekseimartoyas.financetracker.domain.Currency
+import io.alekseimartoyas.financetracker.domain.OperationType
 import io.alekseimartoyas.financetracker.data.local.Transaction
 import io.alekseimartoyas.financetracker.presentation.modules.history.view.IHistoryFragmentPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.history.view.RecyclerViewManager.TransactionRVAdapter

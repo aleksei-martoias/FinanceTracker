@@ -1,6 +1,6 @@
 package io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.presenter
 
-import io.alekseimartoyas.financetracker.data.Currency
+import io.alekseimartoyas.financetracker.domain.Currency
 import io.alekseimartoyas.financetracker.domain.interactors.GetExchRateInteractor
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.view.IAnotherCurrencyFragmentPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput

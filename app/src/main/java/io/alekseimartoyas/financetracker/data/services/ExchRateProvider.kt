@@ -1,4 +1,4 @@
-package io.alekseimartoyas.financetracker.services
+package io.alekseimartoyas.financetracker.data.services
 
 import io.alekseimartoyas.financetracker.data.network.DailyResponse
 import io.alekseimartoyas.financetracker.data.network.IRetrofitReqs
