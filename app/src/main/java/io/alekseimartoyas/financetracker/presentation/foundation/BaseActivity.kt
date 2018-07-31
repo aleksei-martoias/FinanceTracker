@@ -11,8 +11,4 @@ abstract class BaseActivity<Presenter>: AppCompatActivity() {
     fun setPres(presenter: Presenter) {
         this.presenter = presenter
     }
-//    override fun onStart() {
-//        super.onStart()
-//        presenter?.onStart
-//    }
 }

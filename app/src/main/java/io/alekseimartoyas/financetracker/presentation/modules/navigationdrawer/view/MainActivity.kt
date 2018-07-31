@@ -10,7 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.addaccount.view.AddAccountFragment
-import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.AddTransaction
+import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.AddTransactionActivity
 import io.alekseimartoyas.financetracker.presentation.modules.history.view.HistoryFragment
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.MainScreenFragment
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.presenter.IMainActivityInput
@@ -118,7 +118,7 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
     }
 
     override fun showAddTransaction() {
-        this.startActivity(Intent(this, AddTransaction::class.java))
+        this.startActivity(Intent(this, AddTransactionActivity::class.java))
     }
 
     override fun showAddAccount() {

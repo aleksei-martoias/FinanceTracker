@@ -6,7 +6,7 @@ import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.pre
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_add_transaction.*
 
-class AddTransaction : BaseActivity<IAddTransactionActivityPresenter>(),
+class AddTransactionActivity : BaseActivity<IAddTransactionActivityPresenter>(),
         IAddTransactionActivityInput {
 
     override fun onCreate(savedInstanceState: Bundle?) {

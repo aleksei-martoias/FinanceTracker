@@ -17,8 +17,8 @@ class AnotherCurrencyFragment: BaseFragment<IAnotherCurrencyFragmentPresenter>()
         return inflater.inflate(R.layout.fragment_another_currency, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         AnotherCurrencyConfigurator().buildModule(this)
     }
