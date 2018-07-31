@@ -27,7 +27,7 @@
             android:name=".presentation.modules.aboutapp.view.AboutAppActivity"
             android:parentActivityName=".presentation.modules.settings.view.SettingsActivity" />
         <activity
-            android:name=".presentation.modules.addtransaction.view.AddTransaction"
+            android:name=".presentation.modules.addtransaction.view.AddTransactionActivity"
             android:parentActivityName=".presentation.modules.navigationdrawer.view.MainActivity"/>
     </application>
 

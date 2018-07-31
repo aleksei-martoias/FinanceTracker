@@ -7,19 +7,22 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.addaccount.view.AddAccountFragment
-import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.AddTransaction
+import io.alekseimartoyas.financetracker.presentation.modules.addtransaction.view.AddTransactionActivity
 import io.alekseimartoyas.financetracker.presentation.modules.history.view.HistoryFragment
 import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.view.MainScreenFragment
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.presenter.IMainActivityInput
+import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.presenter.MainActivityPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
 import io.alekseimartoyas.financetracker.presentation.modules.settings.view.SettingsActivity
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 
-class MainActivity : BaseActivity<IMainActivityPresenter>(),
+class MainActivity : BaseActivity<MainActivityPresenter>(),
         IMainActivityInput,
         NavigationView.OnNavigationItemSelectedListener,
         IMainActivityRouterInput {
@@ -46,10 +49,10 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
     }
 
     fun setTb() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar_main_activity as Toolbar)
 
         val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+                this, drawer_layout, toolbar_main_activity as Toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
     }
@@ -118,7 +121,7 @@ class MainActivity : BaseActivity<IMainActivityPresenter>(),
     }
 
     override fun showAddTransaction() {
-        this.startActivity(Intent(this, AddTransaction::class.java))
+        this.startActivity(Intent(this, AddTransactionActivity::class.java))
     }
 
     override fun showAddAccount() {

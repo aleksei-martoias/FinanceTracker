@@ -7,19 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.addaccount.configurator.AddAccountConfigurator
+import io.alekseimartoyas.financetracker.presentation.modules.addaccount.presenter.AddAccountPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.addaccount.presenter.IAddAccountFragmentInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseActivity
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 
-class AddAccountFragment: BaseFragment<IAddAccountFragmentPresenter>(),
+class AddAccountFragment: BaseFragment<AddAccountPresenter>(),
         IAddAccountFragmentInput {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_add_account, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         AddAccountConfigurator().buildModule(this)
         setTb()

@@ -6,18 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".presentation.modules.aboutapp.view.AboutAppActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_about_app"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <include
+        android:id="@+id/toolbar_about_app_activity"
+        layout="@layout/toolbar" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/about_app_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -26,7 +20,7 @@
         android:text="@string/appInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_about_app" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_about_app_activity" />
 
     <View
         android:id="@+id/divider"
@@ -38,10 +32,10 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/about_app_tv" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/develped_by_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

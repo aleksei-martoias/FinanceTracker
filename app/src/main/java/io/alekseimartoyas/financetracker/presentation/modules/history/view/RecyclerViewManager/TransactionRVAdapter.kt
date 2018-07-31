@@ -36,6 +36,7 @@ class TransactionRVAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(),
             holder.currencyText.text = transactionList[position].currency.toString()
             holder.operationTypeText.text = transactionList[position].operationType.toString()
             holder.quantityCurrencyText.text = transactionList[position].quantity.toString()
+            holder.data.text = transactionList[position].date
         }
     }
 
@@ -44,5 +45,6 @@ class TransactionRVAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(),
         val operationTypeText = view.findViewById<TextView>(R.id.operation_type_text)!!
         val quantityCurrencyText = view.findViewById<TextView>(R.id.currency_quantity_text)!!
         val currencyText = view.findViewById<TextView>(R.id.currency_text)!!
+        val data = view.findViewById<TextView>(R.id.date_tv)
     }
 }

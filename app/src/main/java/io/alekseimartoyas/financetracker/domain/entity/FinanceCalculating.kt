@@ -1,7 +1,7 @@
 package io.alekseimartoyas.financetracker.domain.entity
 
-import io.alekseimartoyas.financetracker.data.Currency
-import io.alekseimartoyas.financetracker.data.OperationType
+import io.alekseimartoyas.financetracker.domain.Currency
+import io.alekseimartoyas.financetracker.domain.OperationType
 import io.alekseimartoyas.financetracker.data.local.Transaction
 
 class FinanceCalculating(val transactions: Array<Transaction>): FinanceCalculatingInput {

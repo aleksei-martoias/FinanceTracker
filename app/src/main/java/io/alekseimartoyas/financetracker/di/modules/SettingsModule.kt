@@ -2,7 +2,7 @@ package io.alekseimartoyas.financetracker.di.modules
 
 import dagger.Module
 import dagger.Provides
-import io.alekseimartoyas.financetracker.services.SettingsSevice
+import io.alekseimartoyas.financetracker.data.services.SettingsSevice
 
 @Module
 class SettingsModule {

@@ -1,4 +1,4 @@
-package io.alekseimartoyas.financetracker.data
+package io.alekseimartoyas.financetracker.domain
 
 enum class OperationType {
     ENLISTMENT,

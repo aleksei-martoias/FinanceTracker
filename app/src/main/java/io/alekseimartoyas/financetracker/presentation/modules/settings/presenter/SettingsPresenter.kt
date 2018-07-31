@@ -2,14 +2,12 @@ package io.alekseimartoyas.financetracker.presentation.modules.settings.presente
 
 import android.content.Context
 import io.alekseimartoyas.financetracker.presentation.modules.navigationdrawer.router.IMainActivityRouterInput
-import io.alekseimartoyas.financetracker.presentation.modules.settings.view.ISettingsPresenter
 import io.alekseimartoyas.tradetracker.Foundation.BasePresenter
 
 class SettingsPresenter(view: ISettingsActivityInput,
                         router: IMainActivityRouterInput?):
         BasePresenter<ISettingsActivityInput,
-        IMainActivityRouterInput>(view, router),
-        ISettingsPresenter {
+        IMainActivityRouterInput>(view, router) {
     override fun onStart() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -18,7 +16,7 @@ class SettingsPresenter(view: ISettingsActivityInput,
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun showAboutApp(context: Context) {
+    fun showAboutApp(context: Context) {
 //        if (canStartActivity)
 //            router?.showAboutApp(context)
     }

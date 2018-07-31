@@ -13,11 +13,17 @@ import io.alekseimartoyas.financetracker.presentation.modules.mainscreen.present
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 import kotlinx.android.synthetic.main.fragment_main_screen.*
 
-class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
+class MainScreenFragment: BaseFragment<MainScreenPresenter>(),
         IMainScreenFragmentInput {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_main_screen, container, false)
+        return inflater.inflate(R.layout.fragment_main_screen, container, false)
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        MainScreenConfigurator().buildModule(this)
+        setAddAccountBtListener()
         if (savedInstanceState == null) {  //To change fragment insertion
             activity?.let {
                 it.supportFragmentManager
@@ -28,16 +34,6 @@ class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
                         .commit()
             }
         }
-
-        return rootView
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        MainScreenConfigurator().buildModule(this)
-
-        setAddAccountBtListener()
     }
 
     fun setAddAccountBtListener() {
@@ -49,6 +45,8 @@ class MainScreenFragment: BaseFragment<IMainScreenFragmentPresenter>(),
     override fun onStart() {
         super.onStart()
         presenter?.onStart()
+        presenter?.getAccountsId()
+        presenter?.getAccountData(/*selected*/1)
     }
 
     override fun onStop() {

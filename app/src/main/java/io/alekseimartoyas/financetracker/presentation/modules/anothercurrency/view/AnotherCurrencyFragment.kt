@@ -6,19 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.configurator.AnotherCurrencyConfigurator
+import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.presenter.AnotherCurrencyPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.anothercurrency.presenter.IAnotherCurrencyFragmentInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 import kotlinx.android.synthetic.main.fragment_another_currency.*
 
-class AnotherCurrencyFragment: BaseFragment<IAnotherCurrencyFragmentPresenter>(),
+class AnotherCurrencyFragment: BaseFragment<AnotherCurrencyPresenter>(),
         IAnotherCurrencyFragmentInput {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_another_currency, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         AnotherCurrencyConfigurator().buildModule(this)
     }

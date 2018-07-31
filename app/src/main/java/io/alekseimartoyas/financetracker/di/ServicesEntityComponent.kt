@@ -5,10 +5,9 @@ import io.alekseimartoyas.financetracker.di.modules.DataSourceModule
 import io.alekseimartoyas.financetracker.di.modules.ExchRateProviderModule
 //import io.alekseimartoyas.financetracker.di.modules.FinanceCalculatingModule
 import io.alekseimartoyas.financetracker.di.modules.SettingsModule
-import io.alekseimartoyas.financetracker.services.DataSource
-import io.alekseimartoyas.financetracker.services.ExchRateProvider
-import io.alekseimartoyas.financetracker.services.SettingsSevice
-import retrofit2.Retrofit
+import io.alekseimartoyas.financetracker.data.services.DataSource
+import io.alekseimartoyas.financetracker.data.services.ExchRateProvider
+import io.alekseimartoyas.financetracker.data.services.SettingsSevice
 
 @Component(modules = [/*FinanceCalculatingModule::class,*/
     DataSourceModule::class,

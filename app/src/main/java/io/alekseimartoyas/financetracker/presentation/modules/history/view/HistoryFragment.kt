@@ -9,26 +9,26 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import io.alekseimartoyas.financetracker.R
 import io.alekseimartoyas.financetracker.presentation.modules.history.configurator.HistoryConfigurator
+import io.alekseimartoyas.financetracker.presentation.modules.history.presenter.HistoryPresenter
 import io.alekseimartoyas.financetracker.presentation.modules.history.presenter.IHistoryFragmentInput
 import io.alekseimartoyas.tradetracker.Foundation.BaseFragment
 import kotlinx.android.synthetic.main.fragment_history.*
 
-class HistoryFragment: BaseFragment<IHistoryFragmentPresenter>(),
+class HistoryFragment: BaseFragment<HistoryPresenter>(),
         IHistoryFragmentInput {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_history, container, false)
+        return inflater.inflate(R.layout.fragment_history, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         HistoryConfigurator().buildModule(this)
-
-//        transaction_rv  с помощью synthetic null
-        val rv = rootView.findViewById<RecyclerView>(R.id.transaction_rv)
-        rv.layoutManager = LinearLayoutManager(inflater.context,
+        transaction_rv.layoutManager = LinearLayoutManager(layoutInflater.context,
                 LinearLayout.VERTICAL,
                 false)
-        rv.adapter = presenter!!.getAdapter()
-
-        return rootView
+        transaction_rv.adapter = presenter!!.getAdapter()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
