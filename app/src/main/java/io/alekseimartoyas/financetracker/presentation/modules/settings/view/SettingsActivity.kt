@@ -37,12 +37,12 @@ class SettingsActivity:
     }
 
     fun onClickFeedback(view: View) {
-        val emailIntent = Intent(Intent.ACTION_SENDTO)
+        val emailIntent = Intent(Intent.ACTION_SEND)
         emailIntent.type = "text/plain"
         emailIntent.putExtra(Intent.EXTRA_EMAIL, "someAddress@gmail.com")
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "FinanceTracker feedback")
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Good Application, thank you.")
-        startActivity(Intent.createChooser(intent, "Send email"))
+        startActivity(emailIntent)
     }
 
     override fun onDestroy() {
